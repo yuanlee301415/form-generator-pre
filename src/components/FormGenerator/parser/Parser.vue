@@ -1,6 +1,6 @@
 <script>
-import { deepClone } from '@/utils/index'
-import render from '@/components/render/render.js'
+import { deepClone } from '../utils'
+import render from '../render/render.js'
 
 const ruleTrigger = {
   'el-input': 'blur',
@@ -69,7 +69,7 @@ function renderFrom(h) {
   )
 }
 
-function formBtns(h) {
+function formBtns() {
   return <el-col>
     <el-form-item size="large">
       <el-button type="primary" onClick={this.submitForm}>提交</el-button>

@@ -9,7 +9,7 @@ export const formConf = {
   gutter: 15,
   disabled: false,
   span: 24,
-  formBtns: true
+  formBtns: false // 默认不启用“表单按钮”（预览时，表单底部不再固定显示“提交”和“重置”按钮）
 }
 
 // 输入型组件 【左面板】

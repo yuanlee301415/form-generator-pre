@@ -103,12 +103,23 @@
         @refresh="refreshJson"
     />
     <code-type-dialog
-        :visible.sync="dialogVisible"
         title="选择生成类型"
         :show-file-name="showFileName"
         @confirm="generate"
     />
     <input id="copyNode" type="hidden">
+
+
+    <el-drawer
+        title="预览"
+        :visible.sync="drawer"
+        direction="rtl"
+        size="90vw"
+        append-to-body
+    >
+      <Parser v-if="drawer" :form-conf="formData"/>
+    </el-drawer>
+
   </div>
 </template>
 
@@ -117,6 +128,8 @@ import draggable from 'vuedraggable'
 import { debounce } from 'throttle-debounce'
 import { saveAs } from 'file-saver'
 import ClipboardJS from 'clipboard'
+import Parser from '@/components/FormGenerator/parser/Parser.vue'
+
 import render from '@/components/FormGenerator/render/render'
 import FormDrawer from '@/components/FormGenerator/components/FormDrawer.vue'
 import JsonDrawer from '@/components/FormGenerator/components/JsonDrawer.vue'
@@ -133,7 +146,6 @@ import {
 import { makeUpJs } from '@/components/FormGenerator/generator/js'
 import { makeUpCss } from '@/components/FormGenerator/generator/css'
 import drawingDefalut from '@/components/FormGenerator/generator/drawingDefalut'
-import logo from '@/assets/logo.png'
 import CodeTypeDialog from '@/components/FormGenerator/components/CodeTypeDialog.vue'
 import DraggableItem from '@/components/FormGenerator/components/DraggableItem.vue'
 import {
@@ -151,6 +163,7 @@ const idGlobal = getIdGlobal()
 
 export default {
   components: {
+    Parser,
     draggable,
     render,
     FormDrawer,
@@ -161,7 +174,9 @@ export default {
   },
   data() {
     return {
-      logo,
+      drawer: false,
+
+
       idGlobal,
       formConf,
       inputComponents,
@@ -350,10 +365,13 @@ export default {
         fields: deepClone(this.drawingList),
         ...this.formConf
       }
+      console.log('AssembleFormData>formData:', this.formData)
     },
     generate(data) {
       const func = this[`exec${titleCase(this.operationType)}`]
       this.generateConf = data
+      console.log('operationType:', this.operationType)
+      console.log('generateConf:', this.generateConf)
       func && func(data)
     },
     execRun(data) {
@@ -409,9 +427,9 @@ export default {
       this.operationType = 'download'
     },
     run() {
-      this.dialogVisible = true
-      this.showFileName = false
-      this.operationType = 'run'
+      this.AssembleFormData()
+
+      this.drawer = true
     },
     copy() {
       this.dialogVisible = true
