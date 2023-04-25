@@ -19,6 +19,31 @@ export const routes = [
         component: () => import('@/views/home')
       }
     ]
+  },
+
+  { // Form
+    path: '/form',
+    component: Layout,
+    redirect: '/form/',
+    children: [
+      {
+        path: 'add',
+        name: 'FormAdd',
+        meta: {
+          title: '新增表单'
+        },
+        component: () => import('@/views/form/add')
+      },
+
+      {
+        path: 'edit',
+        name: 'FormEdit',
+        meta: {
+          title: '编辑表单'
+        },
+        component: () => import('@/views/form/edit')
+      }
+    ]
   }
 ]
 
