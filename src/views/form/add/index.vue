@@ -1,14 +1,6 @@
 <template>
-  <div class="container">
+  <div style="position: relative;width: 100%; height: 100%;">
     <div class="left-board">
-      <div class="logo-wrapper">
-        <div class="logo">
-          <img :src="logo" alt="logo"> Form Generator
-          <a class="github" href="https://github.com/JakHuang/form-generator" target="_blank">
-            <img src="https://github.githubassets.com/pinned-octocat.svg" alt>
-          </a>
-        </div>
-      </div>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
           <div v-for="(item, listIndex) in leftComponents" :key="listIndex">
