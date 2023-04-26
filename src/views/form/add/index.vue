@@ -152,6 +152,8 @@ import {
   getDrawingList, saveDrawingList, getIdGlobal, saveIdGlobal, getFormConf
 } from '@/components/FormGenerator/utils/db'
 import loadBeautifier from '@/components/FormGenerator/utils/loadBeautifier'
+import {CustomFormData} from "@/components/FormGenerator/models/CustomFormData";
+import {Field} from "@/components/FormGenerator/models/Field";
 
 let beautifier
 const emptyActiveData = { style: {}, autosize: {} }
@@ -175,24 +177,22 @@ export default {
   data() {
     return {
       drawer: false,
-
-
       idGlobal,
-      formConf,
+      formConf: new CustomFormData(),
       inputComponents,
       selectComponents,
       layoutComponents,
       labelWidth: 100,
-      drawingList: drawingDefalut,
+      drawingList: [],
       drawingData: {},
-      activeId: drawingDefalut[0].formId,
+      activeId: '',
       drawerVisible: false,
       formData: {},
       dialogVisible: false,
       jsonDrawerVisible: false,
       generateConf: null,
       showFileName: false,
-      activeData: drawingDefalut[0],
+      activeData: new Field(),
       saveDrawingListDebounce: debounce(340, saveDrawingList),
       saveIdGlobalDebounce: debounce(340, saveIdGlobal),
       leftComponents: [
@@ -246,31 +246,8 @@ export default {
     }
   },
   mounted() {
-    if (Array.isArray(drawingListInDB) && drawingListInDB.length > 0) {
-      this.drawingList = drawingListInDB
-    } else {
-      this.drawingList = drawingDefalut
-    }
-    this.activeFormItem(this.drawingList[0])
-    if (formConfInDB) {
-      this.formConf = formConfInDB
-    }
     loadBeautifier(btf => {
       beautifier = btf
-    })
-    const clipboard = new ClipboardJS('#copyNode', {
-      text: trigger => {
-        const codeStr = this.generateCode()
-        this.$notify({
-          title: '成功',
-          message: '代码已复制到剪切板，可粘贴。',
-          type: 'success'
-        })
-        return codeStr
-      }
-    })
-    clipboard.on('error', e => {
-      this.$message.error('代码复制失败')
     })
   },
   methods: {
