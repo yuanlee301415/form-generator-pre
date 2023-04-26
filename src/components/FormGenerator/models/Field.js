@@ -95,7 +95,9 @@ export class FieldConfig {
 
     constructor(_) {
         const {
-            label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue, formId, renderKey } = { ..._ }
+            label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
+            formId, renderKey, children, ...rest
+        } = { ..._ }
         this.label = label
         this.labelWidth = labelWidth
         this.showLabel = !!showLabel
@@ -109,6 +111,8 @@ export class FieldConfig {
         this.defaultValue = defaultValue
         this.formId = formId
         this.renderKey = renderKey
+        this.children = children && children.map(_ => new Field(_))
+        Object.assign(rest, this)
     }
 }
 
@@ -165,6 +169,6 @@ export class Field {
         this.disabled = !!disabled
 
         // 其它的：各个表单项各自独有的属性
-        Object.assign(this, rest)
+        Object.assign(rest, this)
     }
 }

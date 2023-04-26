@@ -69,7 +69,7 @@ function renderFrom(h) {
   )
 }
 
-function formBtns() {
+function formBtns(h) {
   return <el-col>
     <el-form-item size="large">
       <el-button type="primary" onClick={this.submitForm}>提交</el-button>

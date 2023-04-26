@@ -257,7 +257,7 @@ export default {
   methods: {
     initData() {
       this.$axios({
-        url: '/mock-data/formData-2.json'
+        url: '/mock-data/formData-3.json'
       }).then(res => {
         console.log('res.data:', res.data)
         this.formConf = new CustomFormData(res.data)

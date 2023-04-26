@@ -1,0 +1,271 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "showLabel": false,
+        "changeTag": false,
+        "tagIcon": "row",
+        "required": false,
+        "layout": "rowFormItem",
+        "span": 24,
+        "formId": 102,
+        "renderKey": "1021682492111179",
+        "children": [
+          {
+            "__config__": {
+              "label": "姓名",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 8,
+              "regList": [],
+              "defaultValue": "张三",
+              "formId": 104,
+              "renderKey": "1041682492139916"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "__vModel__": "field104",
+            "placeholder": "请输入姓名",
+            "style": {
+              "width": "100%"
+            },
+            "readonly": false,
+            "disabled": false
+          },
+          {
+            "__config__": {
+              "label": "联系方式",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-input",
+              "tagIcon": "input",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 8,
+              "regList": [],
+              "defaultValue": "18012345678",
+              "formId": 107,
+              "renderKey": "1071682492170177"
+            },
+            "__slot__": {
+              "prepend": "",
+              "append": ""
+            },
+            "__vModel__": "field107",
+            "placeholder": "请输入联系方式",
+            "style": {
+              "width": "100%"
+            },
+            "readonly": false,
+            "disabled": false
+          },
+          {
+            "__config__": {
+              "label": "填表日期",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-date-picker",
+              "tagIcon": "date",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 8,
+              "regList": [],
+              "defaultValue": "2023-04-27",
+              "formId": 109,
+              "renderKey": "1091682492182447"
+            },
+            "__vModel__": "field109",
+            "placeholder": "请选择填表日期",
+            "style": {
+              "width": "100%"
+            },
+            "readonly": false,
+            "disabled": false
+          }
+        ]
+      },
+      "readonly": false,
+      "disabled": false
+    },
+    {
+      "__config__": {
+        "label": "申请类型",
+        "labelWidth": null,
+        "showLabel": true,
+        "changeTag": true,
+        "tag": "el-checkbox-group",
+        "tagIcon": "checkbox",
+        "required": true,
+        "layout": "colFormItem",
+        "span": 24,
+        "regList": [],
+        "defaultValue": [
+          1,
+          2
+        ],
+        "formId": 110,
+        "renderKey": "1101682492307089"
+      },
+      "__slot__": {
+        "options": [
+          {
+            "label": "选项一",
+            "value": 1
+          },
+          {
+            "label": "选项二",
+            "value": 2
+          },
+          {
+            "label": "选项三",
+            "value": 3
+          }
+        ]
+      },
+      "__vModel__": "field110",
+      "style": {},
+      "readonly": false,
+      "disabled": false
+    },
+    {
+      "__config__": {
+        "label": "下拉选择",
+        "labelWidth": null,
+        "showLabel": true,
+        "changeTag": true,
+        "tag": "el-select",
+        "tagIcon": "select",
+        "required": true,
+        "layout": "colFormItem",
+        "span": 24,
+        "regList": [],
+        "defaultValue": 1,
+        "formId": 111,
+        "renderKey": 1682477783402
+      },
+      "__slot__": {
+        "options": [
+          {
+            "label": "选项一",
+            "value": 1
+          },
+          {
+            "label": "选项二",
+            "value": 2
+          }
+        ]
+      },
+      "__vModel__": "field111",
+      "placeholder": "请选择下拉选择",
+      "style": {
+        "width": "100%"
+      },
+      "readonly": false,
+      "disabled": false
+    },
+    {
+      "__config__": {
+        "showLabel": false,
+        "changeTag": false,
+        "tagIcon": "row",
+        "required": false,
+        "layout": "rowFormItem",
+        "span": 24,
+        "formId": 111,
+        "renderKey": "1111682492428165",
+        "children": [
+          {
+            "__config__": {
+              "label": "日期",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-date-picker",
+              "tagIcon": "date",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 12,
+              "regList": [],
+              "defaultValue": "2023-04-30T16:00:00.000Z",
+              "formId": 112,
+              "renderKey": "1121682492437165"
+            },
+            "__vModel__": "field112",
+            "placeholder": "请选择日期",
+            "style": {
+              "width": "100%"
+            },
+            "readonly": false,
+            "disabled": false
+          },
+          {
+            "__config__": {
+              "label": "日期",
+              "labelWidth": null,
+              "showLabel": true,
+              "changeTag": true,
+              "tag": "el-date-picker",
+              "tagIcon": "date",
+              "required": true,
+              "layout": "colFormItem",
+              "span": 12,
+              "regList": [],
+              "defaultValue": "2023-05-01T16:00:00.000Z",
+              "formId": 113,
+              "renderKey": "1131682492445726"
+            },
+            "__vModel__": "field113",
+            "placeholder": "请选择日期",
+            "style": {
+              "width": "100%"
+            },
+            "readonly": false,
+            "disabled": false
+          }
+        ]
+      },
+      "readonly": false,
+      "disabled": false
+    },
+    {
+      "__config__": {
+        "label": "承建单位意见",
+        "labelWidth": null,
+        "showLabel": true,
+        "changeTag": true,
+        "tag": "tinymce",
+        "tagIcon": "rich-text",
+        "required": true,
+        "layout": "colFormItem",
+        "span": 24,
+        "regList": [],
+        "defaultValue": "<p>无。</p>",
+        "formId": 110,
+        "renderKey": 1682492448658
+      },
+      "__vModel__": "field110",
+      "placeholder": "请输入承建单位意见",
+      "readonly": false,
+      "disabled": false
+    }
+  ],
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "medium",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 12,
+  "formBtns": true
+}

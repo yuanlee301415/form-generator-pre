@@ -42,6 +42,15 @@ export const routes = [
           title: '编辑表单'
         },
         component: () => import('@/views/form/edit')
+      },
+
+      {
+        path: 'view',
+        name: 'FormView',
+        meta: {
+          title: '展示表单'
+        },
+        component: () => import('@/views/form/view')
       }
     ]
   }
