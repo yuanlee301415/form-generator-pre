@@ -1,6 +1,7 @@
 {
   "name": "form-generator-pre",
   "version": "0.0.1",
+  "description": "开源项目[form-generator]预研",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
