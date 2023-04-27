@@ -1,6 +1,13 @@
 <template>
   <div style="position: relative;width: 100%; height: 100%;">
     <div class="left-board">
+      <el-select v-model="dataSource" size="small" @change="handleChangeDataSource">
+        <template #prefix><b>表单数据：</b></template>
+        <el-option label="1" value="1">1</el-option>
+        <el-option label="2" value="2">2</el-option>
+        <el-option label="defaultValue" value="defaultValue">defaultValue</el-option>
+        <el-option label="dynamic" value="dynamic">dynamic</el-option>
+      </el-select>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
           <div v-for="(item, listIndex) in leftComponents" :key="listIndex">
@@ -176,6 +183,8 @@ export default {
   data() {
     return {
       drawer: false,
+      dataSource: window.localStorage.getItem('editFormDataSource') || '',
+
       idGlobal,
       formConf: new CustomFormData(),
       inputComponents,
@@ -247,7 +256,7 @@ export default {
   },
   created() {
     console.log('activeData:', this.activeData)
-    this.initData()
+    this.initData('')
   },
   mounted() {
     loadBeautifier(btf => {
@@ -257,7 +266,7 @@ export default {
   methods: {
     initData() {
       this.$axios({
-        url: '/mock-data/formData-3.json'
+        url: `/mock-data/formData${this.dataSource ? '-' + this.dataSource : ''}.json`
       }).then(res => {
         console.log('res.data:', res.data)
         this.formConf = new CustomFormData(res.data)
@@ -269,6 +278,11 @@ export default {
         this.drawingList[0] && this.activeFormItem(this.drawingList[0])
       })
     },
+    handleChangeDataSource() {
+      this.initData()
+      window.localStorage.setItem('editFormDataSource', this.dataSource)
+    },
+
     setObjectValueReduce(obj, strKeys, data) {
       const arr = strKeys.split('.')
       arr.reduce((pre, item, i) => {
