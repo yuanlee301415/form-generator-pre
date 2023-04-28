@@ -64,12 +64,12 @@ export default class CustomFormData {
             formRef = 'elForm',
             formModel = 'formData',
             size = 'medium',
-            labelPosition,
-            labelWidth,
+            labelWidth = 100,
             formRules = 'rules',
-            gutter,
+            labelPosition,
+            gutter = 15,
+            span = 24,
             disabled,
-            span,
             formBtns,
             ...rest
         } = {..._}
