@@ -35,7 +35,7 @@ export default class Field {
     style
 
     /**
-     * 只读
+     * 是否只读
      * @type boolean
      */
     readonly
@@ -53,8 +53,8 @@ export default class Field {
     gutter
 
     /**
-     * 表单组件自身的 `type` 属性
-     * @type *
+     * 组件自身的 `type` 属性
+     * @type string
      */
     type
 
@@ -71,13 +71,13 @@ export default class Field {
     align
 
     /**
-     * 最小值 / 至少应选(复选框组)
+     * 最小值 / 复选框组 - 至少应选
      * @type number
      */
     min
 
     /**
-     * 最大值 / 最多可选(复选框组)
+     * 最大值 / 复选框组 - 最多可选
      * @type number
      */
     max
@@ -167,25 +167,25 @@ export default class Field {
     filterable
 
     /**
-     * 显示格式化
+     * 时间/日期 - 显示格式化
      * @type string
      */
     format
 
     /**
-     * 上传文件类型
+     * 文件上传 - 文件类型
      * @type string
      */
     accept
 
     /**
-     * 上传地址
+     * 文件上传 - 上传地址
      * @type string
      */
     action
 
     /**
-     * 上传文件 `name`
+     * 文件上传 - 文件 `name`
      * @type string
      */
     name
@@ -209,17 +209,20 @@ export default class Field {
     ['show-word-limit']
 
     /**
+     * Todo
      * @type boolean
      */
     ['show-password']
 
     /**
-     * @type string
+     * 按钮位置
+     * @type {'' | 'right'}
      */
     ['controls-position']
 
     /**
-     * @type string
+     * 严格步数
+     * @type boolean
      */
     ['step-strictly']
 
@@ -230,49 +233,49 @@ export default class Field {
     ['show-all-levels']
 
     /**
-     * 间日期选择器特有的选项
+     * 时间/日期 - 选择器特有的选项
      * @type object
      */
     ['picker-options']
 
     /**
-     * 值格式化
+     * 时间/日期 - 值格式化
      * @type string
      */
     ['value-format']
 
     /**
-     * 开始 时间/日期 占位符
+     * 时间/日期 - 开始占位符
      * @type string
      */
     ['start-placeholder']
 
     /**
-     * 结束 时间/日期 占位符
+     * 时间/日期 - 结束占位符
      * @type string
      */
     ['end-placeholder']
 
     /**
-     * 日期/时间范围占位符
+     * 日期/时间 - 范围占位符
      * @type string
      */
     ['range-separator']
 
     /**
-     * 范围选择
+     * 日期/时间 - 范围选择
      * @type boolean
      */
     ['is-range']
 
     /**
-     * 自动上传
+     * 文件上传 - 是否自动上传
      * @type boolean
      */
     ['auto-upload']
 
     /**
-     * 上传文件列表类型
+     * 文件上传 - 列表类型
      * @type string
      */
     ['list-type']
@@ -294,10 +297,13 @@ export default class Field {
             ['is-range']: isRange,
             ['auto-upload']: autoUpload,
             ['list-type']: listType,
+            ['show-password']: showPassword,
+            ['controls-position']: controlsPosition,
+            ['step-strictly']: stepStrictly,
             ...rest
         } = {..._}
 
-        if (Object.keys(rest).length ) {
+        if (Object.keys(rest).length) {
             console.warn('Field')
             console.log('arg:', _)
             console.log('rest:', rest)
@@ -346,5 +352,8 @@ export default class Field {
         this['is-range'] = isRange
         this['auto-upload'] = autoUpload
         this['list-type'] = listType
+        this['show-password'] = showPassword
+        this['controls-position'] = controlsPosition
+        this['step-strictly'] = stepStrictly
     }
 }
