@@ -3,11 +3,12 @@
     <div class="left-board">
       <el-select v-model="dataSource" size="small" @change="handleChangeDataSource">
         <template #prefix><b>表单数据：</b></template>
-        <el-option label="1" value="1">1</el-option>
-        <el-option label="2" value="2">2</el-option>
-        <el-option label="defaultValue" value="defaultValue">defaultValue</el-option>
-        <el-option label="dynamic" value="dynamic">dynamic</el-option>
-        <el-option label="cascader" value="cascader">cascader</el-option>
+        <el-option value="1">1</el-option>
+        <el-option value="2">2</el-option>
+        <el-option value="defaultValue">defaultValue</el-option>
+        <el-option value="dynamic">dynamic</el-option>
+        <el-option value="cascader">cascader</el-option>
+        <el-option value="all">all</el-option>
       </el-select>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
@@ -273,10 +274,7 @@ export default {
         this.formConf = new CustomFormData(res.data)
         console.log('formConf:', this.formConf)
 
-        this.drawingList = res.data.fields && res.data.fields.map(_ => {
-          console.log('field:', _)
-          return new Field(_)
-        }) || []
+        this.drawingList = res.data.fields && res.data.fields.map(_ => new Field(_)) || []
         console.log('drawingList:', this.drawingList)
 
         this.drawingList[0] && this.activeFormItem(this.drawingList[0])

@@ -154,15 +154,149 @@ export default class Field {
      */
     multiple
 
+    /**
+     * 能否清空
+     * @type boolean
+     */
+    clearable
+
+    /**
+     * 能否搜索
+     * @type boolean
+     */
+    filterable
+
+    /**
+     * 显示格式化
+     * @type string
+     */
+    format
+
+    /**
+     * 上传文件类型
+     * @type string
+     */
+    accept
+
+    /**
+     * 上传地址
+     * @type string
+     */
+    action
+
+    /**
+     * 上传文件 `name`
+     * @type string
+     */
+    name
+
+    /**
+     * 前图标
+     * @type string
+     */
+    ['prefix-icon']
+
+    /**
+     * 后图标
+     * @type string
+     */
+    ['suffix-icon']
+
+    /**
+     * 输入统计
+     * @type boolean
+     */
+    ['show-word-limit']
+
+    /**
+     * @type boolean
+     */
+    ['show-password']
+
+    /**
+     * @type string
+     */
+    ['controls-position']
+
+    /**
+     * @type string
+     */
+    ['step-strictly']
+
+    /**
+     * 显示全路径
+     * @type boolean
+     */
+    ['show-all-levels']
+
+    /**
+     * 间日期选择器特有的选项
+     * @type object
+     */
+    ['picker-options']
+
+    /**
+     * 值格式化
+     * @type string
+     */
+    ['value-format']
+
+    /**
+     * 开始 时间/日期 占位符
+     * @type string
+     */
+    ['start-placeholder']
+
+    /**
+     * 结束 时间/日期 占位符
+     * @type string
+     */
+    ['end-placeholder']
+
+    /**
+     * 日期/时间范围占位符
+     * @type string
+     */
+    ['range-separator']
+
+    /**
+     * 范围选择
+     * @type boolean
+     */
+    ['is-range']
+
+    /**
+     * 自动上传
+     * @type boolean
+     */
+    ['auto-upload']
+
+    /**
+     * 上传文件列表类型
+     * @type string
+     */
+    ['list-type']
+
     constructor(_) {
-        console.log('Field>arg:', _)
         const {
             __config__, __slot__, __vModel__, placeholder, style, readonly, disabled, props,
             gutter, type, justify, align, min, max, separator, autosize, height, step, precision, maxlength,
-            options, branding, range, size, multiple,
+            options, branding, range, size, multiple, clearable, filterable, format, accept, action, name,
+            ['prefix-icon']: prefixIcon,
+            ['suffix-icon']: suffixIcon,
+            ['show-word-limit']: showWordLimit,
+            ['show-all-levels']: showAllLevels,
+            ['picker-options']: pickerOptions,
+            ['value-format']: valueFormat,
+            ['start-placeholder']: startPlaceholder,
+            ['end-placeholder']: endPlaceholder,
+            ['range-separator']: rangeSeparator,
+            ['is-range']: isRange,
+            ['auto-upload']: autoUpload,
+            ['list-type']: listType,
             ...rest
         } = {..._}
-        console.log('Field>rest:', rest)
+        console.warn('Field>rest:', rest)
         this.__config__ = new FieldConfig(__config__)
         this.__slot__ = __slot__
         this.__vModel__ = __vModel__
@@ -188,9 +322,23 @@ export default class Field {
         this.range = !!range
         this.size = size
         this.multiple = !!multiple
-
-        // 其它的：各个表单项各自独有的属性
-        // Object.assign(this, rest)
-        console.log('Field>this:', this)
+        this.clearable = !!clearable
+        this.filterable = !!filterable
+        this.format = format
+        this.accept = accept
+        this.action = action
+        this.name = name
+        this['prefix-icon'] = prefixIcon
+        this['suffix-icon'] = suffixIcon
+        this['show-word-limit'] = showWordLimit
+        this['show-all-levels'] = showAllLevels
+        this['picker-options'] = pickerOptions
+        this['value-format'] = valueFormat
+        this['start-placeholder'] = startPlaceholder
+        this['end-placeholder'] = endPlaceholder
+        this['range-separator'] = rangeSeparator
+        this['is-range'] = isRange
+        this['auto-upload'] = autoUpload
+        this['list-type'] = listType
     }
 }

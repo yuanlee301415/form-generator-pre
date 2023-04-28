@@ -6,6 +6,7 @@
         <el-option label="2" value="2">2</el-option>
         <el-option label="defaultValue" value="defaultValue">defaultValue</el-option>
         <el-option label="dynamic" value="dynamic">dynamic</el-option>
+        <el-option label="cascader" value="cascader">cascader</el-option>
       </el-select>
       <hr>
       <Parser v-if="formData" :form-conf="formData"/>

@@ -114,11 +114,13 @@ export default class FieldConfig {
     optionType
 
     constructor(_) {
+        // console.log('FieldConfig>arg:', _)
         const {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
             formId, renderKey, children, dataType, url, method, dataPath, optionType,
             ...rest
         } = {..._}
+        // console.warn('FieldConfig:', rest)
         this.label = label
         this.labelWidth = labelWidth
         this.showLabel = !!showLabel
@@ -139,6 +141,6 @@ export default class FieldConfig {
         this.dataPath = dataPath
         this.optionType = optionType
 
-        Object.assign(rest, this)
+        // Object.assign(rest, this)
     }
 }

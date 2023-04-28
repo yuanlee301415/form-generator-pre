@@ -70,8 +70,10 @@ export default class CustomFormData {
             gutter,
             disabled,
             span,
-            formBtns
+            formBtns,
+            ...rest
         } = {..._}
+        // console.warn('Form>rest:', rest)
         this.formRef = formRef
         this.formModel = formModel
         this.size = size
