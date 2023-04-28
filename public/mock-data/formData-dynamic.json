@@ -1,102 +1,6 @@
 {
-  "MOCK": "动态数据",
+  "MOCK": "表单项动态配置数据",
   "fields": [
-    {
-      "__config__": {
-        "showLabel": false,
-        "changeTag": false,
-        "tagIcon": "row",
-        "required": false,
-        "layout": "rowFormItem",
-        "span": 24,
-        "formId": 102,
-        "renderKey": "1021682492111179",
-        "children": [
-          {
-            "__config__": {
-              "label": "姓名",
-              "labelWidth": null,
-              "showLabel": true,
-              "changeTag": true,
-              "tag": "el-input",
-              "tagIcon": "input",
-              "required": true,
-              "layout": "colFormItem",
-              "span": 8,
-              "regList": [],
-              "defaultValue": "张三",
-              "formId": 104,
-              "renderKey": "1041682492139916"
-            },
-            "__slot__": {
-              "prepend": "",
-              "append": ""
-            },
-            "__vModel__": "field104",
-            "placeholder": "请输入姓名",
-            "style": {
-              "width": "100%"
-            },
-            "readonly": false,
-            "disabled": false
-          },
-          {
-            "__config__": {
-              "label": "联系方式",
-              "labelWidth": null,
-              "showLabel": true,
-              "changeTag": true,
-              "tag": "el-input",
-              "tagIcon": "input",
-              "required": true,
-              "layout": "colFormItem",
-              "span": 8,
-              "regList": [],
-              "defaultValue": "18012345678",
-              "formId": 107,
-              "renderKey": "1071682492170177"
-            },
-            "__slot__": {
-              "prepend": "",
-              "append": ""
-            },
-            "__vModel__": "field107",
-            "placeholder": "请输入联系方式",
-            "style": {
-              "width": "100%"
-            },
-            "readonly": false,
-            "disabled": false
-          },
-          {
-            "__config__": {
-              "label": "填表日期",
-              "labelWidth": null,
-              "showLabel": true,
-              "changeTag": true,
-              "tag": "el-date-picker",
-              "tagIcon": "date",
-              "required": true,
-              "layout": "colFormItem",
-              "span": 8,
-              "regList": [],
-              "defaultValue": "2023-04-27",
-              "formId": 109,
-              "renderKey": "1091682492182447"
-            },
-            "__vModel__": "field109",
-            "placeholder": "请选择填表日期",
-            "style": {
-              "width": "100%"
-            },
-            "readonly": false,
-            "disabled": false
-          }
-        ]
-      },
-      "readonly": false,
-      "disabled": false
-    },
     {
       "__config__": {
         "label": "申请类型",
@@ -166,7 +70,7 @@
         ]
       },
       "__vModel__": "field111",
-      "placeholder": "请选择下拉选择",
+      "placeholder": "请选择下拉选择下拉选择",
       "style": {
         "width": "100%"
       },
@@ -175,88 +79,157 @@
     },
     {
       "__config__": {
-        "showLabel": false,
-        "changeTag": false,
-        "tagIcon": "row",
-        "required": false,
-        "layout": "rowFormItem",
+        "label": "级联选择",
+        "url": "https://www.fastmock.site/mock/f8d7a54fb1e60561e2f720d5a810009d/fg/cascaderList",
+        "method": "get",
+        "dataPath": "list",
+        "dataConsumer": "options",
+        "showLabel": true,
+        "labelWidth": null,
+        "tag": "el-cascader",
+        "tagIcon": "cascader",
+        "layout": "colFormItem",
+        "defaultValue": [],
+        "dataType": "dynamic",
         "span": 24,
-        "formId": 111,
-        "renderKey": "1111682492428165",
-        "children": [
-          {
-            "__config__": {
-              "label": "日期",
-              "labelWidth": null,
-              "showLabel": true,
-              "changeTag": true,
-              "tag": "el-date-picker",
-              "tagIcon": "date",
-              "required": true,
-              "layout": "colFormItem",
-              "span": 12,
-              "regList": [],
-              "defaultValue": "2023-04-30T16:00:00.000Z",
-              "formId": 112,
-              "renderKey": "1121682492437165"
-            },
-            "__vModel__": "field112",
-            "placeholder": "请选择日期",
-            "style": {
-              "width": "100%"
-            },
-            "readonly": false,
-            "disabled": false
-          },
-          {
-            "__config__": {
-              "label": "日期",
-              "labelWidth": null,
-              "showLabel": true,
-              "changeTag": true,
-              "tag": "el-date-picker",
-              "tagIcon": "date",
-              "required": true,
-              "layout": "colFormItem",
-              "span": 12,
-              "regList": [],
-              "defaultValue": "2023-05-01T16:00:00.000Z",
-              "formId": 113,
-              "renderKey": "1131682492445726"
-            },
-            "__vModel__": "field113",
-            "placeholder": "请选择日期",
-            "style": {
-              "width": "100%"
-            },
-            "readonly": false,
-            "disabled": false
-          }
-        ]
+        "required": true,
+        "regList": [],
+        "changeTag": true,
+        "document": "https://element.eleme.cn/#/zh-CN/component/cascader",
+        "formId": 102,
+        "renderKey": "1021682581007007"
       },
-      "readonly": false,
-      "disabled": false
+      "options": [
+        {
+          "id": 1,
+          "value": 1,
+          "label": "动态选项1",
+          "children": [
+            {
+              "id": 2,
+              "value": 2,
+              "label": "动态选项1-1"
+            }
+          ]
+        }
+      ],
+      "placeholder": "请选择级联选择",
+      "style": {
+        "width": "100%"
+      },
+      "props": {
+        "props": {
+          "multiple": false,
+          "label": "label",
+          "value": "value",
+          "children": "children"
+        }
+      },
+      "show-all-levels": true,
+      "disabled": false,
+      "clearable": true,
+      "filterable": false,
+      "separator": "/",
+      "__vModel__": "field102"
     },
     {
       "__config__": {
-        "label": "承建单位意见",
-        "labelWidth": null,
+        "layout": "colFormItem",
+        "tagIcon": "table",
+        "tag": "el-table",
+        "document": "https://element.eleme.cn/#/zh-CN/component/table",
+        "span": 24,
+        "formId": 103,
+        "renderKey": "1031682581012545",
+        "componentName": "row101",
         "showLabel": true,
         "changeTag": true,
-        "tag": "tinymce",
-        "tagIcon": "rich-text",
-        "required": true,
-        "layout": "colFormItem",
-        "span": 24,
-        "regList": [],
-        "defaultValue": "<p>无。</p>",
-        "formId": 110,
-        "renderKey": 1682492448658
+        "labelWidth": null,
+        "label": "表格[开发中]",
+        "dataType": "dynamic",
+        "method": "get",
+        "dataPath": "list",
+        "dataConsumer": "data",
+        "url": "https://www.fastmock.site/mock/f8d7a54fb1e60561e2f720d5a810009d/fg/tableData",
+        "children": [
+          {
+            "__config__": {
+              "layout": "raw",
+              "tag": "el-table-column",
+              "renderKey": "1041682581012545",
+              "formId": 104
+            },
+            "prop": "date",
+            "label": "日期"
+          },
+          {
+            "__config__": {
+              "layout": "raw",
+              "tag": "el-table-column",
+              "renderKey": "1051682581012545",
+              "formId": 105
+            },
+            "prop": "address",
+            "label": "地址"
+          },
+          {
+            "__config__": {
+              "layout": "raw",
+              "tag": "el-table-column",
+              "renderKey": "1061682581012545",
+              "formId": 106
+            },
+            "prop": "name",
+            "label": "名称"
+          },
+          {
+            "__config__": {
+              "layout": "raw",
+              "tag": "el-table-column",
+              "renderKey": "1071682581012545",
+              "children": [
+                {
+                  "__config__": {
+                    "label": "按钮",
+                    "tag": "el-button",
+                    "tagIcon": "button",
+                    "layout": "raw",
+                    "renderKey": "1081682581012545",
+                    "formId": 108
+                  },
+                  "__slot__": {
+                    "default": "主要按钮"
+                  },
+                  "type": "primary",
+                  "icon": "el-icon-search",
+                  "round": false,
+                  "size": "medium"
+                }
+              ],
+              "formId": 107
+            },
+            "label": "操作"
+          }
+        ]
       },
-      "__vModel__": "field110",
-      "placeholder": "请输入承建单位意见",
-      "readonly": false,
-      "disabled": false
+      "data": [
+        {
+          "date": "2020-09-09",
+          "name": "JakHuang",
+          "address": "上海市普陀区金沙江路 2020 弄"
+        }
+      ],
+      "directives": [
+        {
+          "name": "loading",
+          "value": false
+        }
+      ],
+      "border": true,
+      "type": "default",
+      "justify": "start",
+      "align": "top",
+      "__vModel__": "field103"
     }
   ],
   "formRef": "elForm",
@@ -267,6 +240,6 @@
   "formRules": "rules",
   "gutter": 15,
   "disabled": false,
-  "span": 12,
+  "span": 24,
   "formBtns": true
 }

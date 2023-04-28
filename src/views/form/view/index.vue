@@ -14,8 +14,8 @@
 
 <script>
   import Parser from "@/components/FormGenerator/parser/Parser.vue";
-  import { CustomFormData } from "@/components/FormGenerator/models/CustomFormData";
-  import { Field } from "@/components/FormGenerator/models/Field";
+  import CustomFormData from "@/components/FormGenerator/models/CustomFormData";
+  import Field from "@/components/FormGenerator/models/Field";
 
   export default {
     name: 'FormView',

@@ -7,6 +7,7 @@
         <el-option label="2" value="2">2</el-option>
         <el-option label="defaultValue" value="defaultValue">defaultValue</el-option>
         <el-option label="dynamic" value="dynamic">dynamic</el-option>
+        <el-option label="cascader" value="cascader">cascader</el-option>
       </el-select>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
@@ -135,8 +136,8 @@ import draggable from 'vuedraggable'
 import { debounce } from 'throttle-debounce'
 import { saveAs } from 'file-saver'
 import ClipboardJS from 'clipboard'
-import { Field } from "@/components/FormGenerator/models/Field";
-import { CustomFormData } from "@/components/FormGenerator/models/CustomFormData";
+import Field from "@/components/FormGenerator/models/Field";
+import CustomFormData from "@/components/FormGenerator/models/CustomFormData";
 import Parser from '@/components/FormGenerator/parser/Parser.vue'
 import render from '@/components/FormGenerator/render/render'
 import FormDrawer from '@/components/FormGenerator/components/FormDrawer.vue'
@@ -272,7 +273,10 @@ export default {
         this.formConf = new CustomFormData(res.data)
         console.log('formConf:', this.formConf)
 
-        this.drawingList = res.data.fields && res.data.fields.map(_ => new Field(_)) || []
+        this.drawingList = res.data.fields && res.data.fields.map(_ => {
+          console.log('field:', _)
+          return new Field(_)
+        }) || []
         console.log('drawingList:', this.drawingList)
 
         this.drawingList[0] && this.activeFormItem(this.drawingList[0])

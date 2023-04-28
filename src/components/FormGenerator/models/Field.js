@@ -1,133 +1,17 @@
-/**
- * 表单项 - 正则校验 Model
- */
-class FieldValidate {
-    /**
-     * 正则表达式
-     * @type string
-     */
-    pattern
-
-    /**
-     * 校验不通过时的提示信息
-     * @type string
-     */
-    message
-
-    constructor(_) {
-        const { pattern, message } = { ..._ }
-        this.pattern = pattern
-        this.message = message
-    }
-}
-
-/**
- * 表单项 - 配置 Model
- */
-export class FieldConfig {
-    /**
-     * 字段标签
-     * @type string
-     */
-    label
-
-    /**
-     * 字段标签宽度
-     * @type number
-     */
-    labelWidth
-
-    /**
-     * @type boolean
-     */
-    showLabel
-
-    /**
-     * @type boolean
-     */
-    changeTag
-
-    /**
-     * @type string
-     */
-    tag
-
-    /**
-     * @type string
-     */
-    tagIcon
-
-    /**
-     * @type boolean
-     */
-    required
-
-    /**
-     * @type string
-     */
-    layout
-
-    /**
-     * @type number
-     */
-    span
-
-    /**
-     * 校验
-     * @type FieldValidate[]
-     */
-    regList
-
-    /**
-     * @type *
-     */
-    defaultValue
-
-    /**
-     * @type number
-     */
-    formId
-
-    /**
-     * @type number
-     */
-    renderKey
-
-    constructor(_) {
-        const {
-            label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
-            formId, renderKey, children, ...rest
-        } = { ..._ }
-        this.label = label
-        this.labelWidth = labelWidth
-        this.showLabel = !!showLabel
-        this.changeTag = !!changeTag
-        this.tag = tag
-        this.tagIcon = tagIcon
-        this.required = !!required
-        this.layout = layout
-        this.span = span
-        this.regList = regList && regList.map(_ => new FieldValidate(_))
-        this.defaultValue = defaultValue
-        this.formId = formId
-        this.renderKey = renderKey
-        this.children = children && children.map(_ => new Field(_))
-        Object.assign(rest, this)
-    }
-}
+import FieldConfig from "./FieldConfig";
 
 /**
  * 表单项 Model
  */
-export class Field {
+export default class Field {
     /**
-     * 表单项组件配置
+     * 组件配置
      * @type FieldConfig
      */
     __config__
 
     /**
-     * 表单项组件插槽
+     * 组件插槽
      * @type object
      */
     __slot__
@@ -138,12 +22,14 @@ export class Field {
     __vModel__
 
     /**
+     * 占位提示
      * @type string
      */
     placeholder
 
     /**
-     * @type object
+     * 组件样式
+     * @type {{width: string} & object}
      */
     style
 
@@ -158,8 +44,86 @@ export class Field {
      */
     disabled
 
+    /**
+     * 栅格间隔(布局容器)
+     * @type number
+     */
+    gutter
+
+    /**
+     * 表单组件自身的 `type` 属性
+     * @type *
+     */
+    type
+
+    /**
+     * 水平排列
+     * @type string
+     */
+    justify
+
+    /**
+     * 垂直排列
+     * @type string
+     */
+    align
+
+    /**
+     * 最小值 / 至少应选(复选框组)
+     * @type number
+     */
+    min
+
+    /**
+     * 最大值 / 最多可选(复选框组)
+     * @type number
+     */
+    max
+
+    /**
+     * 选项分隔符
+     * @type string
+     */
+    separator
+
+    /**
+     * 自适应内容高度
+     * @type {{ minRows: number, maxRows: number }}
+     */
+    autosize
+
+    /**
+     * 组件高度
+     * @type number
+     */
+    height
+
+    /**
+     * 步长
+     * @type number
+     */
+    step
+
+    /**
+     * 精度
+     * @type number
+     */
+    precision
+
+    /**
+     * 最多输入
+     * @type string
+     */
+    maxlength
+
     constructor(_) {
-        const { __config__, __slot__, __vModel__, placeholder, style, readonly, disabled, ...rest } = { ..._ }
+        console.log('Field>arg:', _)
+        const {
+            __config__, __slot__, __vModel__, placeholder, style, readonly, disabled, props,
+            gutter, type, justify, align, min, max, separator, autosize, height, step, precision, maxlength,
+            ...rest
+        } = {..._}
+        console.log('Field>rest:', rest)
         this.__config__ = new FieldConfig(__config__)
         this.__slot__ = __slot__
         this.__vModel__ = __vModel__
@@ -167,8 +131,22 @@ export class Field {
         this.style = style
         this.readonly = !!readonly
         this.disabled = !!disabled
+        this.props = props
+        this.gutter = gutter
+        this.type = type
+        this.justify = justify
+        this.align = align
+        this.min = min
+        this.max = max
+        this.separator = separator
+        this.autosize = autosize
+        this.height = height
+        this.step = step
+        this.precision = precision
+        this.maxlength = maxlength
 
         // 其它的：各个表单项各自独有的属性
-        Object.assign(rest, this)
+        // Object.assign(this, rest)
+        console.log('Field>this:', this)
     }
 }

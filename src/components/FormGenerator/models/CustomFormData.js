@@ -1,7 +1,7 @@
 /**
  * 自定义表单 Model
  */
-export class CustomFormData {
+export default class CustomFormData {
     /**
      * @type string
      */
@@ -33,6 +33,7 @@ export class CustomFormData {
     formRules
 
     /**
+     * 栅格间隔
      * @type number
      */
     gutter
