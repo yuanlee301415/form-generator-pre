@@ -45,7 +45,7 @@
       "required": true,
       "layout": "colFormItem",
       "regList": [],
-      "defaultValue": [123],
+      "defaultValue": "[123]",
       "formId": 111,
       "renderKey": "1111682660575543"
     },
@@ -262,7 +262,7 @@
       "required": true,
       "layout": "colFormItem",
       "regList": [],
-      "defaultValue": [1, 2],
+      "defaultValue": "[1, 2]",
       "formId": 121,
       "renderKey": "1211682660594666",
       "optionType": "default"
