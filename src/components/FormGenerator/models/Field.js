@@ -296,7 +296,7 @@ export default class Field {
             ['list-type']: listType,
             ...rest
         } = {..._}
-        console.warn('Field>rest:', rest)
+        Object.keys(rest).length && console.warn('Field>rest:', rest)
         this.__config__ = new FieldConfig(__config__)
         this.__slot__ = __slot__
         this.__vModel__ = __vModel__

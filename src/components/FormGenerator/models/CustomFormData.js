@@ -73,7 +73,7 @@ export default class CustomFormData {
             formBtns,
             ...rest
         } = {..._}
-        // console.warn('Form>rest:', rest)
+        Object.keys(rest).length && console.warn('Form>rest:', rest)
         this.formRef = formRef
         this.formModel = formModel
         this.size = size

@@ -120,7 +120,7 @@ export default class FieldConfig {
             formId, renderKey, children, dataType, url, method, dataPath, optionType,
             ...rest
         } = {..._}
-        // console.warn('FieldConfig:', rest)
+        Object.keys(rest).length && console.warn('FieldConfig:', rest)
         this.label = label
         this.labelWidth = labelWidth
         this.showLabel = !!showLabel
@@ -140,7 +140,5 @@ export default class FieldConfig {
         this.method = method
         this.dataPath = dataPath
         this.optionType = optionType
-
-        // Object.assign(rest, this)
     }
 }
