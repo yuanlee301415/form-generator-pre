@@ -37,9 +37,11 @@
           url: `/mock-data/formData${this.dataSource ? '-' + this.dataSource : ''}.json`
         }).then(res => {
           const data = res.data
+          const fields = data.fields
+          delete data.fields
           this.formData = {
             ...new CustomFormData(data),
-            fields: data.fields && data.fields.map(_ => new Field(_))
+            fields: fields && fields.map(_ => new Field(_))
           }
           console.log('formData:', this.dataSource, this.formData)
         })

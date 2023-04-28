@@ -271,10 +271,13 @@ export default {
         url: `/mock-data/formData${this.dataSource ? '-' + this.dataSource : ''}.json`
       }).then(res => {
         console.log('res.data:', res.data)
-        this.formConf = new CustomFormData(res.data)
+        const data = res.data
+        const fields = data.fields
+        delete data.fields
+        this.formConf = new CustomFormData(data)
         console.log('formConf:', this.formConf)
 
-        this.drawingList = res.data.fields && res.data.fields.map(_ => new Field(_)) || []
+        this.drawingList = fields && fields.map(_ => new Field(_)) || []
         console.log('drawingList:', this.drawingList)
 
         this.drawingList[0] && this.activeFormItem(this.drawingList[0])

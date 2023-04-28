@@ -113,14 +113,25 @@ export default class FieldConfig {
      */
     optionType
 
+    /**
+     * Element 组件文档
+     * @type string
+     */
+    document
+
     constructor(_) {
         // console.log('FieldConfig>arg:', _)
         const {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
-            formId, renderKey, children, dataType, url, method, dataPath, optionType,
+            formId, renderKey, children, dataType, url, method, dataPath, optionType, document,
             ...rest
         } = {..._}
-        Object.keys(rest).length && console.warn('FieldConfig:', rest)
+        if (Object.keys(rest).length ) {
+            console.warn('FieldConfig')
+            console.log('arg:', _)
+            console.log('rest:', rest)
+        }
+
         this.label = label
         this.labelWidth = labelWidth
         this.showLabel = !!showLabel
@@ -140,5 +151,6 @@ export default class FieldConfig {
         this.method = method
         this.dataPath = dataPath
         this.optionType = optionType
+        this.document = void 0
     }
 }
