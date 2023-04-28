@@ -32,7 +32,14 @@
             </el-select>
           </el-form-item>
           <el-form-item v-if="activeData.__vModel__!==undefined" label="字段名">
-            <el-input v-model="activeData.__vModel__" placeholder="请输入字段名（v-model）" />
+            <el-select v-model="activeData.__vModel__" placeholder="请选择字段名" clearable readonly>
+              <el-option
+                  v-for="item in fields"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+              </el-option>
+            </el-select>
           </el-form-item>
           <el-form-item v-if="activeData.__config__.componentName!==undefined" label="组件名">
             {{ activeData.__config__.componentName }}
@@ -771,7 +778,8 @@ export default {
           const config = data.__config__
           return data.componentName || `${config.label}: ${data.__vModel__}`
         }
-      }
+      },
+      fields: null
     }
   },
   computed: {
@@ -825,6 +833,13 @@ export default {
       },
       deep: true
     }
+  },
+  created() {
+    this.$axios({
+      url: '/mock-data/fields.json'
+    }).then(res => {
+      this.fields = res.data
+    })
   },
   methods: {
     addReg() {
