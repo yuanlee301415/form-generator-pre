@@ -67,11 +67,13 @@ export default class FieldConfig {
     defaultValue
 
     /**
+     * 自动生成 `id`
      * @type number
      */
     formId
 
     /**
+     * 自动生成 `key`
      * @type number
      */
     renderKey
@@ -101,7 +103,7 @@ export default class FieldConfig {
     dataPath
 
     /**
-     * @type Field
+     * @type Field[]
      */
     children
 
@@ -116,7 +118,7 @@ export default class FieldConfig {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
             formId, renderKey, children, dataType, url, method, dataPath, optionType,
             ...rest
-        } = { ..._ }
+        } = {..._}
         this.label = label
         this.labelWidth = labelWidth
         this.showLabel = !!showLabel

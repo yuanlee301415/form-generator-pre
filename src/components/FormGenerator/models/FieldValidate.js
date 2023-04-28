@@ -15,7 +15,7 @@ export default class FieldValidate {
     message
 
     constructor(_) {
-        const { pattern, message } = { ..._ }
+        const {pattern, message} = {..._}
         this.pattern = pattern
         this.message = message
     }

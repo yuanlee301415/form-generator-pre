@@ -35,6 +35,7 @@ export default class Field {
     style
 
     /**
+     * 只读
      * @type boolean
      */
     readonly
@@ -131,7 +132,7 @@ export default class Field {
 
     /**
      * 品牌烙印
-     * @typ boolean
+     * @type boolean
      */
     branding
 
@@ -183,10 +184,10 @@ export default class Field {
         this.precision = precision
         this.maxlength = maxlength
         this.options = options
-        this.branding = branding
-        this.range = range
+        this.branding = !!branding
+        this.range = !!range
         this.size = size
-        this.multiple = multiple
+        this.multiple = !!multiple
 
         // 其它的：各个表单项各自独有的属性
         // Object.assign(this, rest)
