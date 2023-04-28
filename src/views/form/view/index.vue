@@ -2,11 +2,12 @@
     <div style="position: relative;width: 100%; height: 100vh;">
       <b>表单数据：</b>
       <el-select v-model="dataSource" size="small" @change="handleChangeDataSource">
-        <el-option label="1" value="1">1</el-option>
-        <el-option label="2" value="2">2</el-option>
-        <el-option label="defaultValue" value="defaultValue">defaultValue</el-option>
-        <el-option label="dynamic" value="dynamic">dynamic</el-option>
-        <el-option label="cascader" value="cascader">cascader</el-option>
+        <el-option value="1">1</el-option>
+        <el-option value="2">2</el-option>
+        <el-option value="defaultValue">defaultValue</el-option>
+        <el-option value="dynamic">dynamic</el-option>
+        <el-option value="cascader">cascader</el-option>
+        <el-option value="all">all</el-option>
       </el-select>
       <hr>
       <Parser v-if="formData" :form-conf="formData"/>
@@ -40,7 +41,7 @@
             ...new CustomFormData(data),
             fields: data.fields && data.fields.map(_ => new Field(_))
           }
-          console.log('formData:', this.formData)
+          console.log('formData:', this.dataSource, this.formData)
         })
       },
       handleChangeDataSource() {

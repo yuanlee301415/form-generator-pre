@@ -2,6 +2,40 @@
   "fields": [
     {
       "__config__": {
+        "label": "数据版本",
+        "labelWidth": null,
+        "showLabel": true,
+        "changeTag": true,
+        "tag": "el-input",
+        "tagIcon": "input",
+        "defaultValue": "1",
+        "required": true,
+        "layout": "colFormItem",
+        "span": 24,
+        "document": "https://element.eleme.cn/#/zh-CN/component/input",
+        "regList": [],
+        "formId": 101,
+        "renderKey": 1682669881575
+      },
+      "__slot__": {
+        "prepend": "",
+        "append": ""
+      },
+      "placeholder": "请输入数据版本",
+      "style": {
+        "width": "100%"
+      },
+      "clearable": true,
+      "prefix-icon": "",
+      "suffix-icon": "",
+      "maxlength": null,
+      "show-word-limit": false,
+      "readonly": false,
+      "disabled": true,
+      "__vModel__": "field101"
+    },
+    {
+      "__config__": {
         "label": "手机号",
         "labelWidth": null,
         "showLabel": true,
