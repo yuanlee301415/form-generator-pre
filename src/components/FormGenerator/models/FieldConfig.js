@@ -67,12 +67,6 @@ export default class FieldConfig {
     defaultValue
 
     /**
-     * 组件英文名称
-     * @type string
-     */
-    componentName
-
-    /**
      * @type number
      */
     formId
@@ -82,10 +76,46 @@ export default class FieldConfig {
      */
     renderKey
 
+    /**
+     * 数据类型(动态数据|静态数据)
+     * @type {'dynamic' | 'static'}
+     */
+    dataType
+
+    /**
+     * 接口地址
+     * @type string
+     */
+    url
+
+    /**
+     * HTTP 方法
+     * @type string
+     */
+    method
+
+    /**
+     * 数据位置
+     * @type string
+     */
+    dataPath
+
+    /**
+     * @type Field
+     */
+    children
+
+    /**
+     * 选项样式
+     * @type {'default' | 'button'}
+     */
+    optionType
+
     constructor(_) {
         const {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
-            componentName, formId, renderKey, children, ...rest
+            formId, renderKey, children, dataType, url, method, dataPath, optionType,
+            ...rest
         } = { ..._ }
         this.label = label
         this.labelWidth = labelWidth
@@ -98,10 +128,15 @@ export default class FieldConfig {
         this.span = span
         this.regList = regList && regList.map(_ => new FieldValidate(_))
         this.defaultValue = defaultValue
-        this.componentName = componentName
         this.formId = formId
         this.renderKey = renderKey
         this.children = children && children.map(_ => new Field(_))
+        this.dataType = dataType
+        this.url = url
+        this.method = method
+        this.dataPath = dataPath
+        this.optionType = optionType
+
         Object.assign(rest, this)
     }
 }

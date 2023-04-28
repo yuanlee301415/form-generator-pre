@@ -17,6 +17,7 @@ export default class Field {
     __slot__
 
     /**
+     * 字段名(`name`)
      * @type string
      */
     __vModel__
@@ -116,11 +117,48 @@ export default class Field {
      */
     maxlength
 
+    /**
+     * 组件自身的 `props`
+     * @type object
+     */
+    props
+
+    /**
+     * 组件自身的 `options`
+     * @type object[]
+     */
+    options
+
+    /**
+     * 品牌烙印
+     * @typ boolean
+     */
+    branding
+
+    /**
+     * 范围选择
+     * @type boolean
+     */
+    range
+
+    /**
+     * 组件尺寸
+     * @type {'medium' | 'small' | 'mini'}
+     */
+    size
+
+    /**
+     * 是否多选
+     * @type boolean
+     */
+    multiple
+
     constructor(_) {
         console.log('Field>arg:', _)
         const {
             __config__, __slot__, __vModel__, placeholder, style, readonly, disabled, props,
             gutter, type, justify, align, min, max, separator, autosize, height, step, precision, maxlength,
+            options, branding, range, size, multiple,
             ...rest
         } = {..._}
         console.log('Field>rest:', rest)
@@ -144,6 +182,11 @@ export default class Field {
         this.step = step
         this.precision = precision
         this.maxlength = maxlength
+        this.options = options
+        this.branding = branding
+        this.range = range
+        this.size = size
+        this.multiple = multiple
 
         // 其它的：各个表单项各自独有的属性
         // Object.assign(this, rest)

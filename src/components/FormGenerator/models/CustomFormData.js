@@ -3,31 +3,37 @@
  */
 export default class CustomFormData {
     /**
+     * 表单名(`ref`)
      * @type string
      */
     formRef
 
     /**
+     * 数据模型(`model`)
      * @type string
      */
     formModel
 
     /**
-     * @type string
+     * 尺寸
+     * @type {'medium' | 'small' | 'mini'}
      */
     size
 
     /**
-     * @type string
+     * 标签对齐
+     * @type {'left' | 'right' | 'top'}
      */
     labelPosition
 
     /**
+     * 标签宽度
      * @type number
      */
     labelWidth
 
     /**
+     * 校验模型
      * @type string
      */
     formRules
