@@ -185,8 +185,7 @@ export default class Field {
     name
 
     /**
-     * 品牌烙印
-     * @type undefined
+     * @deprecated 品牌烙印
      */
     branding
 

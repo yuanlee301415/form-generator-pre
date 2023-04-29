@@ -55,8 +55,7 @@ export default class CustomFormData {
     span
 
     /**
-     * 是否自动添加“提交”和“重置”按钮
-     * @type undefined
+     * @deprecated 是否自动添加“提交”和“重置”按钮
      */
     formBtns
 

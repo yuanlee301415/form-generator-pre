@@ -116,8 +116,7 @@ export default class FieldConfig {
     optionType
 
     /**
-     * Element 组件文档地址
-     * @type undefined
+     * @deprecated Element 组件文档地址
      */
     document
 
