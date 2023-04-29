@@ -242,7 +242,8 @@ export const selectComponents = [
       regList: [],
       required: true,
       border: false,
-      document: 'https://element.eleme.cn/#/zh-CN/component/radio'
+      document: 'https://element.eleme.cn/#/zh-CN/component/radio',
+      dataType: 'dynamic'
     },
     __slot__: {
       options: [{
@@ -272,7 +273,8 @@ export const selectComponents = [
       regList: [],
       changeTag: true,
       border: false,
-      document: 'https://element.eleme.cn/#/zh-CN/component/checkbox'
+      document: 'https://element.eleme.cn/#/zh-CN/component/checkbox',
+      dataType: 'dynamic'
     },
     __slot__: {
       options: [{

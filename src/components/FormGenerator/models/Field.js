@@ -321,11 +321,11 @@ export default class Field {
         this.precision = precision
         this.maxlength = maxlength
         this.options = options
-        this.range = !!range
+        this.range = range
         this.size = size
-        this.multiple = !!multiple
-        this.clearable = !!clearable
-        this.filterable = !!filterable
+        this.multiple = multiple
+        this.clearable = clearable
+        this.filterable = filterable
         this.format = format
         this.accept = accept
         this.action = action

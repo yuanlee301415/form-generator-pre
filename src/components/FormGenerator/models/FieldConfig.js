@@ -130,19 +130,25 @@ export default class FieldConfig {
      */
     dict
 
+    /**
+     * 是否显示边框
+     * @type boolean
+     */
+    border
+
     constructor(_) {
         const {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
-            formId, renderKey, children, dataType, url, method, dataPath, optionType, document, dataConsumer, dict,
+            formId, renderKey, children, dataType, url, method, dataPath, optionType, document, dataConsumer, dict, border,
             ...rest
         } = {..._}
         this.label = label
         this.labelWidth = labelWidth
-        this.showLabel = !!showLabel
-        this.changeTag = !!changeTag
+        this.showLabel = showLabel
+        this.changeTag = changeTag
         this.tag = tag
         this.tagIcon = tagIcon
-        this.required = !!required
+        this.required = required
         this.layout = layout
         this.span = span
         this.regList = regList && regList.map(_ => new FieldValidate(_))
@@ -158,6 +164,7 @@ export default class FieldConfig {
         this.document = void document
         this.dataConsumer = dataConsumer
         this.dict = dict
+        this.border = border
 
         if (Object.keys(rest).length) {
             console.warn('FieldConfig>rest:')
