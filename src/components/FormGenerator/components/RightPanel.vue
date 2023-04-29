@@ -1,3 +1,7 @@
+<!--
+组件属性配置项：
+  通过其配置项的值是否等于 `undefined` 进行判断，如果等于，则不显示此配置项，否则显示此配置项
+-->
 <template>
   <div class="right-board">
     <el-tabs v-model="currentTab" class="center-tabs">
