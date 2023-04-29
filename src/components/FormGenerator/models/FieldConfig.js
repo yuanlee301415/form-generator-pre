@@ -58,7 +58,6 @@ export default class FieldConfig {
     span
 
     /**
-     * 校验
      * @type FieldValidate[]
      */
     regList
@@ -81,8 +80,7 @@ export default class FieldConfig {
     renderKey
 
     /**
-     * 数据类型(动态数据|静态数据)
-     * @type {'dynamic' | 'static'}
+     * @type DATA_TYPE
      */
     dataType
 

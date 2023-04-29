@@ -15,14 +15,12 @@ export default class CustomFormData {
     formModel
 
     /**
-     * 尺寸
-     * @type {'medium' | 'small' | 'mini'}
+     * @type COMPONENT_SIZE
      */
     size
 
     /**
-     * 标签对齐
-     * @type {'left' | 'right' | 'top'}
+     * @type LABEL_POSITION
      */
     labelPosition
 

@@ -1,4 +1,5 @@
 import FieldConfig from "./FieldConfig";
+import FieldOption from "./FieldOption";
 
 /**
  * 表单项 Model
@@ -125,8 +126,7 @@ export default class Field {
     props
 
     /**
-     * 组件自身的 `options`
-     * @type json[]
+     * @type FieldOption[]
      */
     options
 
@@ -137,8 +137,7 @@ export default class Field {
     range
 
     /**
-     * 组件尺寸
-     * @type {'medium' | 'small' | 'mini'}
+     * @type COMPONENT_SIZE
      */
     size
 
