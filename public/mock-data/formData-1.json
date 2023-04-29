@@ -1,14 +1,4 @@
 {
-  "formRef": "elForm",
-  "formModel": "formData",
-  "size": "medium",
-  "labelPosition": "right",
-  "labelWidth": 100,
-  "formRules": "rules",
-  "gutter": 15,
-  "disabled": false,
-  "span": 24,
-  "formBtns": true,
   "fields": [
     {
       "__config__": {
@@ -18,7 +8,7 @@
         "changeTag": true,
         "tag": "el-input",
         "tagIcon": "input",
-        "defaultValue": "2",
+        "defaultValue": "1",
         "required": true,
         "layout": "colFormItem",
         "span": 24,
@@ -35,8 +25,8 @@
       "style": {
         "width": "100%"
       },
-      "clearable": false,
-      "prefix-icon": "el-icon-eleme",
+      "clearable": true,
+      "prefix-icon": "",
       "suffix-icon": "",
       "maxlength": null,
       "show-word-limit": false,
@@ -46,7 +36,7 @@
     },
     {
       "__config__": {
-        "label": "单行文本",
+        "label": "手机号",
         "labelWidth": null,
         "showLabel": true,
         "changeTag": true,
@@ -61,14 +51,15 @@
             "pattern": "/^1(3|4|5|7|8|9)\\d{9}$/",
             "message": "手机号格式错误"
           }
-        ]
+        ],
+        "defaultValue": "张三"
       },
       "__slot__": {
         "prepend": "",
         "append": ""
       },
       "__vModel__": "mobile",
-      "placeholder": "请输入手机号",
+      "placeholder": "请输入手机号姓名",
       "style": {
         "width": "100%"
       },
@@ -82,118 +73,37 @@
     },
     {
       "__config__": {
-        "label": "下拉选择",
+        "label": "计数器",
         "showLabel": true,
+        "changeTag": true,
         "labelWidth": null,
-        "tag": "el-select",
-        "tagIcon": "select",
-        "layout": "colFormItem",
+        "tag": "el-input-number",
+        "tagIcon": "number",
         "span": 24,
+        "layout": "colFormItem",
         "required": true,
         "regList": [],
-        "changeTag": true,
-        "document": "https://element.eleme.cn/#/zh-CN/component/select",
-        "formId": 111,
-        "renderKey": 1682477783402
+        "document": "https://element.eleme.cn/#/zh-CN/component/input-number",
+        "formId": 101,
+        "renderKey": "1011682408935306",
+        "defaultValue": 3
       },
-      "__slot__": {
-        "options": [
-          {
-            "label": "选项一",
-            "value": 1
-          },
-          {
-            "label": "选项二",
-            "value": 2
-          }
-        ]
-      },
-      "placeholder": "请选择下拉选择",
-      "style": {
-        "width": "100%"
-      },
-      "clearable": true,
+      "placeholder": "计数器",
+      "step": 1,
+      "step-strictly": false,
+      "controls-position": "",
       "disabled": false,
-      "filterable": false,
-      "multiple": false,
-      "__vModel__": "field111"
-    },
-    {
-      "__config__": {
-        "label": "级联选择",
-        "url": "https://www.fastmock.site/mock/f8d7a54fb1e60561e2f720d5a810009d/fg/cascaderList",
-        "method": "get",
-        "dataKey": "list",
-        "showLabel": true,
-        "labelWidth": null,
-        "tag": "el-cascader",
-        "tagIcon": "cascader",
-        "layout": "colFormItem",
-        "defaultValue": [
-          "zj",
-          "hz"
-        ],
-        "dataType": "static",
-        "span": 24,
-        "required": true,
-        "regList": [],
-        "changeTag": true,
-        "document": "https://element.eleme.cn/#/zh-CN/component/cascader",
-        "formId": 108,
-        "renderKey": 1682302766375
-      },
-      "options": [
-        {
-          "id": 1,
-          "value": 1,
-          "label": "选项1",
-          "children": [
-            {
-              "id": 2,
-              "value": 2,
-              "label": "选项1-1"
-            }
-          ]
-        },
-        {
-          "label": "浙江",
-          "value": "zj",
-          "id": 100,
-          "children": [
-            {
-              "label": "杭州",
-              "value": "hz",
-              "id": 101,
-              "children": []
-            }
-          ]
-        }
-      ],
-      "placeholder": "请选择级联选择",
-      "style": {
-        "width": "100%"
-      },
-      "props": {
-        "props": {
-          "multiple": false,
-          "label": "label",
-          "value": "value",
-          "children": "children"
-        }
-      },
-      "show-all-levels": true,
-      "disabled": false,
-      "clearable": true,
-      "filterable": false,
-      "separator": "/",
-      "__vModel__": "field108"
+      "__vModel__": "field101"
     },
     {
       "__config__": {
         "label": "日期范围",
         "tag": "el-date-picker",
         "tagIcon": "date-range",
-        "defaultValue": null,
+        "defaultValue": [
+          "2023-04-01",
+          "2023-05-01"
+        ],
         "span": 24,
         "showLabel": true,
         "labelWidth": null,
@@ -202,8 +112,8 @@
         "regList": [],
         "changeTag": true,
         "document": "https://element.eleme.cn/#/zh-CN/component/date-picker",
-        "formId": 112,
-        "renderKey": 1682477800678
+        "formId": 103,
+        "renderKey": "1031682408939221"
       },
       "style": {
         "width": "100%"
@@ -217,7 +127,7 @@
       "format": "yyyy-MM-dd",
       "value-format": "yyyy-MM-dd",
       "readonly": false,
-      "__vModel__": "field112"
+      "__vModel__": "field103"
     },
     {
       "__config__": {
@@ -227,19 +137,29 @@
         "labelWidth": null,
         "tag": "tinymce",
         "tagIcon": "rich-text",
-        "defaultValue": null,
+        "defaultValue": "<p><strong>加粗了</strong></p>",
         "span": 24,
         "layout": "colFormItem",
         "required": true,
         "regList": [],
         "document": "http://tinymce.ax-z.cn",
-        "formId": 110,
-        "renderKey": 1682319071733
+        "formId": 104,
+        "renderKey": 1682413998195
       },
       "placeholder": "请输入编辑器",
       "height": 300,
       "branding": false,
-      "__vModel__": "field110"
+      "__vModel__": "field104"
     }
-  ]
+  ],
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "medium",
+  "labelPosition": "right",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24,
+  "formBtns": false
 }
