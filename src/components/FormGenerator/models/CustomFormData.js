@@ -55,7 +55,8 @@ export default class CustomFormData {
     span
 
     /**
-     * @type boolean
+     * 是否自动添加“提交”和“重置”按钮
+     * @type boolean | undefined
      */
     formBtns
 
@@ -73,13 +74,6 @@ export default class CustomFormData {
             formBtns,
             ...rest
         } = {..._}
-
-        if (Object.keys(rest).length) {
-            console.warn('FormData')
-            console.log('arg:', _)
-            console.log('rest:', rest)
-        }
-
         this.formRef = formRef
         this.formModel = formModel
         this.size = size
@@ -89,6 +83,12 @@ export default class CustomFormData {
         this.gutter = gutter
         this.disabled = !!disabled
         this.span = span
-        this.formBtns = !!formBtns
+        this.formBtns = void formBtns
+
+        if (Object.keys(rest).length) {
+            console.warn('FormData>rest:')
+            console.log('arg:', _)
+            console.table(rest)
+        }
     }
 }

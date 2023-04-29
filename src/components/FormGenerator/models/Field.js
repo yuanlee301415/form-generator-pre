@@ -12,7 +12,7 @@ export default class Field {
 
     /**
      * 组件插槽
-     * @type object
+     * @type json
      */
     __slot__
 
@@ -30,7 +30,7 @@ export default class Field {
 
     /**
      * 组件样式
-     * @type {{width: string} & object}
+     * @type {{width: string} & json}
      */
     style
 
@@ -83,7 +83,7 @@ export default class Field {
     max
 
     /**
-     * 选项分隔符
+     * 级联选择 - 选项分隔符
      * @type string
      */
     separator
@@ -120,21 +120,15 @@ export default class Field {
 
     /**
      * 组件自身的 `props`
-     * @type object
+     * @type json
      */
     props
 
     /**
      * 组件自身的 `options`
-     * @type object[]
+     * @type json[]
      */
     options
-
-    /**
-     * 品牌烙印
-     * @type boolean
-     */
-    branding
 
     /**
      * 范围选择
@@ -189,6 +183,12 @@ export default class Field {
      * @type string
      */
     name
+
+    /**
+     * 品牌烙印
+     * @type boolean | undefined
+     */
+    branding
 
     /**
      * 前图标
@@ -284,7 +284,7 @@ export default class Field {
         const {
             __config__, __slot__, __vModel__, placeholder, style, readonly, disabled, props,
             gutter, type, justify, align, min, max, separator, autosize, height, step, precision, maxlength,
-            options, branding, range, size, multiple, clearable, filterable, format, accept, action, name,
+            options, range, size, multiple, clearable, filterable, format, accept, action, name, branding,
             ['prefix-icon']: prefixIcon,
             ['suffix-icon']: suffixIcon,
             ['show-word-limit']: showWordLimit,
@@ -302,13 +302,6 @@ export default class Field {
             ['step-strictly']: stepStrictly,
             ...rest
         } = {..._}
-
-        if (Object.keys(rest).length) {
-            console.warn('Field')
-            console.log('arg:', _)
-            console.log('rest:', rest)
-        }
-
         this.__config__ = new FieldConfig(__config__)
         this.__slot__ = __slot__
         this.__vModel__ = __vModel__
@@ -330,7 +323,6 @@ export default class Field {
         this.precision = precision
         this.maxlength = maxlength
         this.options = options
-        this.branding = !!branding
         this.range = !!range
         this.size = size
         this.multiple = !!multiple
@@ -340,6 +332,7 @@ export default class Field {
         this.accept = accept
         this.action = action
         this.name = name
+        this.branding = void branding
         this['prefix-icon'] = prefixIcon
         this['suffix-icon'] = suffixIcon
         this['show-word-limit'] = showWordLimit
@@ -355,5 +348,11 @@ export default class Field {
         this['show-password'] = showPassword
         this['controls-position'] = controlsPosition
         this['step-strictly'] = stepStrictly
+
+        if (Object.keys(rest).length) {
+            console.warn('Field>rest:')
+            console.log('arg:', _)
+            console.table(rest)
+        }
     }
 }

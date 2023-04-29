@@ -29,6 +29,7 @@ export default class FieldConfig {
     changeTag
 
     /**
+     * 组件 Component `name`
      * @type string
      */
     tag
@@ -115,7 +116,7 @@ export default class FieldConfig {
 
     /**
      * Element 组件文档
-     * @type string
+     * @type string | undefined
      */
     document
 
@@ -126,12 +127,6 @@ export default class FieldConfig {
             formId, renderKey, children, dataType, url, method, dataPath, optionType, document,
             ...rest
         } = {..._}
-        if (Object.keys(rest).length ) {
-            console.warn('FieldConfig')
-            console.log('arg:', _)
-            console.log('rest:', rest)
-        }
-
         this.label = label
         this.labelWidth = labelWidth
         this.showLabel = !!showLabel
@@ -151,6 +146,12 @@ export default class FieldConfig {
         this.method = method
         this.dataPath = dataPath
         this.optionType = optionType
-        this.document = void 0
+        this.document = void document
+
+        if (Object.keys(rest).length) {
+            console.warn('FieldConfig>rest:')
+            console.log('arg:', _)
+            console.table(rest)
+        }
     }
 }
