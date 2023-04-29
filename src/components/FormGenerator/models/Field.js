@@ -186,7 +186,7 @@ export default class Field {
 
     /**
      * 品牌烙印
-     * @type boolean | undefined
+     * @type undefined
      */
     branding
 
@@ -234,7 +234,7 @@ export default class Field {
 
     /**
      * 时间/日期 - 选择器特有的选项
-     * @type object
+     * @type json
      */
     ['picker-options']
 

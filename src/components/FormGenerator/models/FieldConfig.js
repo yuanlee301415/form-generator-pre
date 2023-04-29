@@ -24,6 +24,7 @@ export default class FieldConfig {
     showLabel
 
     /**
+     * Todo
      * @type boolean
      */
     changeTag
@@ -115,8 +116,8 @@ export default class FieldConfig {
     optionType
 
     /**
-     * Element 组件文档
-     * @type string | undefined
+     * Element 组件文档地址
+     * @type undefined
      */
     document
 

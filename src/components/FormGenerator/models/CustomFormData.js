@@ -56,7 +56,7 @@ export default class CustomFormData {
 
     /**
      * 是否自动添加“提交”和“重置”按钮
-     * @type boolean | undefined
+     * @type undefined
      */
     formBtns
 
