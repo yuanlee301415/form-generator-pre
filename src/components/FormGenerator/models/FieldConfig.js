@@ -124,11 +124,16 @@ export default class FieldConfig {
      */
     dataConsumer
 
+    /**
+     * 数据字典 `id`
+     * @type string
+     */
+    dict
+
     constructor(_) {
-        // console.log('FieldConfig>arg:', _)
         const {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
-            formId, renderKey, children, dataType, url, method, dataPath, optionType, document, dataConsumer,
+            formId, renderKey, children, dataType, url, method, dataPath, optionType, document, dataConsumer, dict,
             ...rest
         } = {..._}
         this.label = label
@@ -152,6 +157,7 @@ export default class FieldConfig {
         this.optionType = optionType
         this.document = void document
         this.dataConsumer = dataConsumer
+        this.dict = dict
 
         if (Object.keys(rest).length) {
             console.warn('FieldConfig>rest:')

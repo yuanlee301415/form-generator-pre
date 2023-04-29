@@ -336,7 +336,7 @@ export default {
     activeFormItem(currentItem) {
       this.activeData = currentItem
       this.activeId = currentItem.__config__.formId
-      console.log('activeFormItem>activeData:', this.activeData)
+      console.log('activeFormItem>activeData:', JSON.parse(JSON.stringify(this.activeData)))
     },
     onEnd(obj) {
       if (obj.from !== obj.to) {

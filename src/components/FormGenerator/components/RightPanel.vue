@@ -370,7 +370,15 @@
               </template>
 
               <el-divider>方式二：选择字典</el-divider>
-
+              <el-select v-model="activeData.__config__.dict" @change="handleChooseDict">
+                <el-option
+                    v-for="dict of dicts"
+                    :label="dict.title"
+                    :value="dict.id"
+                    :key="dict.id"
+                    size="small"
+                />
+              </el-select>
             </template>
 
             <!-- 静态数据 -->
@@ -789,7 +797,8 @@ export default {
           return data.componentName || `${config.label}: ${data.__vModel__}`
         }
       },
-      fields: null
+      fields: null,
+      dicts: null
     }
   },
   computed: {
@@ -850,8 +859,20 @@ export default {
     }).then(res => {
       this.fields = res.data
     })
+
+    this.$axios({
+      url: '/mock-data/dicts.json'
+    }).then(res => {
+      this.dicts = res.data
+    })
   },
   methods: {
+    handleChooseDict() {
+      const dict = this.dicts.find(_ => _.id ===this.activeData.__config__.dict)
+      this.$set(this.activeData.__slot__, 'options', dict.items)
+      this.$set(this.activeData.__config__, 'defaultValue', null)
+      console.log('handleChooseDict:', this.activeData)
+    },
     addReg() {
       this.activeData.__config__.regList.push({
         pattern: '',

@@ -105,10 +105,10 @@
     "__slot__": {
       "options": [{
         "label": "选项一",
-        "value": 1
+        "value": 11
       }, {
         "label": "选项二",
-        "value": 2
+        "value": 22
       }]
     },
     "placeholder": "请选择下拉选择",
