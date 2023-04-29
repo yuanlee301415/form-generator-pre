@@ -1,5 +1,4 @@
 {
-  "MOCK": "表单项动态配置数据",
   "fields": [
     {
       "__config__": {
@@ -9,7 +8,7 @@
         "changeTag": true,
         "tag": "el-input",
         "tagIcon": "input",
-        "defaultValue": "dynamic-（占位，无数据，Todo）",
+        "defaultValue": "表单项动态配置数据",
         "required": true,
         "layout": "colFormItem",
         "span": 24,

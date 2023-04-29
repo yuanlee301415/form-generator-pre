@@ -118,11 +118,17 @@ export default class FieldConfig {
      */
     document
 
+    /**
+     * 组件远程获取的数据
+     * @type string
+     */
+    dataConsumer
+
     constructor(_) {
         // console.log('FieldConfig>arg:', _)
         const {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
-            formId, renderKey, children, dataType, url, method, dataPath, optionType, document,
+            formId, renderKey, children, dataType, url, method, dataPath, optionType, document, dataConsumer,
             ...rest
         } = {..._}
         this.label = label
@@ -145,6 +151,7 @@ export default class FieldConfig {
         this.dataPath = dataPath
         this.optionType = optionType
         this.document = void document
+        this.dataConsumer = dataConsumer
 
         if (Object.keys(rest).length) {
             console.warn('FieldConfig>rest:')
