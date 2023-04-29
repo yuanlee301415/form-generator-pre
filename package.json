@@ -1,6 +1,6 @@
 {
   "name": "form-generator-pre",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "开源项目[form-generator]预研",
   "private": true,
   "scripts": {
