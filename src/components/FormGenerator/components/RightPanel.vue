@@ -311,44 +311,8 @@
               @input="setTimeValue($event)"
             />
           </el-form-item>
-          <template v-if="['el-checkbox-group', 'el-radio-group', 'el-select'].indexOf(activeData.__config__.tag) > -1">
-            <el-divider>选项</el-divider>
-            <draggable
-              :list="activeData.__slot__.options"
-              :animation="340"
-              group="selectItem"
-              handle=".option-drag"
-            >
-              <div v-for="(item, index) in activeData.__slot__.options" :key="index" class="select-item">
-                <div class="select-line-icon option-drag">
-                  <i class="el-icon-s-operation" />
-                </div>
-                <el-input v-model="item.label" placeholder="选项名" size="small" />
-                <el-input
-                  placeholder="选项值"
-                  size="small"
-                  :value="item.value"
-                  @input="setOptionValue(item, $event)"
-                />
-                <div class="close-btn select-line-icon" @click="activeData.__slot__.options.splice(index, 1)">
-                  <i class="el-icon-remove-outline" />
-                </div>
-              </div>
-            </draggable>
-            <div style="margin-left: 20px;">
-              <el-button
-                style="padding-bottom: 0"
-                icon="el-icon-circle-plus-outline"
-                type="text"
-                @click="addSelectItem"
-              >
-                添加选项
-              </el-button>
-            </div>
-            <el-divider />
-          </template>
 
-          <template v-if="['el-cascader', 'el-table'].includes(activeData.__config__.tag)">
+          <template v-if="['el-checkbox-group', 'el-radio-group', 'el-select', 'el-cascader', 'el-table', 'el-select'].includes(activeData.__config__.tag)">
             <el-divider>选项</el-divider>
             <el-form-item v-if="activeData.__config__.dataType" label="数据类型">
               <el-radio-group v-model="activeData.__config__.dataType" size="small">
@@ -361,7 +325,10 @@
               </el-radio-group>
             </el-form-item>
 
+            <!-- 动态数据 -->
             <template v-if="activeData.__config__.dataType === 'dynamic'">
+              <!-- 方式一：接口获取 -->
+              <el-divider>方式一：接口获取</el-divider>
               <el-form-item label="接口地址">
                 <el-input
                   v-model="activeData.__config__.url"
@@ -390,7 +357,6 @@
                   @blur="$emit('fetch-data', activeData)"
                 />
               </el-form-item>
-
               <template v-if="activeData.props && activeData.props.props">
                 <el-form-item label="标签键名">
                   <el-input v-model="activeData.props.props.label" placeholder="请输入标签键名" />
@@ -402,27 +368,69 @@
                   <el-input v-model="activeData.props.props.children" placeholder="请输入子级键名" />
                 </el-form-item>
               </template>
+
+              <el-divider>方式二：选择字典</el-divider>
+
             </template>
 
-            <!-- 级联选择静态树 -->
-            <el-tree
-              v-if="activeData.__config__.dataType === 'static'"
-              draggable
-              :data="activeData.options"
-              node-key="id"
-              :expand-on-click-node="false"
-              :render-content="renderContent"
-            />
-            <div v-if="activeData.__config__.dataType === 'static'" style="margin-left: 20px">
-              <el-button
-                style="padding-bottom: 0"
-                icon="el-icon-circle-plus-outline"
-                type="text"
-                @click="addTreeItem"
-              >
-                添加父级
-              </el-button>
-            </div>
+            <!-- 静态数据 -->
+            <template v-else-if="activeData.__config__.dataType === 'static'">
+              <template v-if="['el-checkbox-group', 'el-radio-group', 'el-select'].indexOf(activeData.__config__.tag) > -1">
+                <draggable
+                    :list="activeData.__slot__.options"
+                    :animation="340"
+                    group="selectItem"
+                    handle=".option-drag"
+                >
+                  <div v-for="(item, index) in activeData.__slot__.options" :key="index" class="select-item">
+                    <div class="select-line-icon option-drag">
+                      <i class="el-icon-s-operation" />
+                    </div>
+                    <el-input v-model="item.label" placeholder="选项名" size="small" />
+                    <el-input
+                        placeholder="选项值"
+                        size="small"
+                        :value="item.value"
+                        @input="setOptionValue(item, $event)"
+                    />
+                    <div class="close-btn select-line-icon" @click="activeData.__slot__.options.splice(index, 1)">
+                      <i class="el-icon-remove-outline" />
+                    </div>
+                  </div>
+                </draggable>
+                <div style="margin-left: 20px;">
+                  <el-button
+                      style="padding-bottom: 0"
+                      icon="el-icon-circle-plus-outline"
+                      type="text"
+                      @click="addSelectItem"
+                  >
+                    添加选项
+                  </el-button>
+                </div>
+              </template>
+
+              <template v-else>
+                <el-tree
+                    draggable
+                    :data="activeData.options"
+                    node-key="id"
+                    :expand-on-click-node="false"
+                    :render-content="renderContent"
+                />
+                <div style="margin-left: 20px">
+                  <el-button
+                      style="padding-bottom: 0"
+                      icon="el-icon-circle-plus-outline"
+                      type="text"
+                      @click="addTreeItem"
+                  >
+                    添加父级
+                  </el-button>
+                </div>
+              </template>
+            </template>
+
             <el-divider />
           </template>
 
@@ -658,6 +666,7 @@
 </template>
 
 <script>
+import draggable from 'vuedraggable'
 import TreeNodeDialog from './TreeNodeDialog.vue'
 import { isNumberStr } from '../utils'
 import IconsDialog from './IconsDialog'
@@ -682,6 +691,7 @@ const needRerenderList = ['tinymce']
 
 export default {
   components: {
+    draggable,
     TreeNodeDialog,
     IconsDialog
   },

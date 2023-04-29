@@ -257,7 +257,6 @@ export default {
     }
   },
   created() {
-    console.log('activeData:', this.activeData)
     this.initData('')
   },
   mounted() {
@@ -275,12 +274,10 @@ export default {
         const fields = data.fields
         delete data.fields
         this.formConf = new CustomFormData(data)
-        console.log('formConf:', this.formConf)
-
         this.drawingList = fields && fields.map(_ => new Field(_)) || []
-        console.log('drawingList:', this.drawingList)
-
         this.drawingList[0] && this.activeFormItem(this.drawingList[0])
+        // 打印数据：
+        this.AssembleFormData()
       })
     },
     handleChangeDataSource() {
@@ -300,6 +297,10 @@ export default {
       }, obj)
     },
     setRespData(component, resp) {
+      console.log('setRespData:', {
+        component,
+        resp
+      })
       const { dataPath, renderKey, dataConsumer } = component.__config__
       if (!dataPath || !dataConsumer) return
       const respData = dataPath.split('.').reduce((pre, item) => pre[item], resp)
@@ -335,6 +336,7 @@ export default {
     activeFormItem(currentItem) {
       this.activeData = currentItem
       this.activeId = currentItem.__config__.formId
+      console.log('activeFormItem>activeData:', this.activeData)
     },
     onEnd(obj) {
       if (obj.from !== obj.to) {
@@ -379,7 +381,7 @@ export default {
         fields: deepClone(this.drawingList),
         ...this.formConf
       }
-      console.log('AssembleFormData>formData:', this.formData)
+      console.log('AssembleFormData>formData:', JSON.parse(JSON.stringify(this.formData)))
     },
     generate(data) {
       const func = this[`exec${titleCase(this.operationType)}`]

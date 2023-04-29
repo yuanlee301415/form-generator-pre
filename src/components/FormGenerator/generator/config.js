@@ -163,7 +163,7 @@ export const selectComponents = [
       required: true,
       regList: [],
       changeTag: true,
-      document: 'https://element.eleme.cn/#/zh-CN/component/select'
+      dataType: 'dynamic'
     },
     __slot__: {
       options: [{
