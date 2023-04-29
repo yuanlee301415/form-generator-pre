@@ -305,8 +305,8 @@ export default class Field {
         this.__vModel__ = __vModel__
         this.placeholder = placeholder
         this.style = style
-        this.readonly = !!readonly
-        this.disabled = !!disabled
+        this.readonly = readonly
+        this.disabled = disabled
         this.props = props
         this.gutter = gutter
         this.type = type
