@@ -152,8 +152,8 @@ import {
   getDrawingList, saveDrawingList, getIdGlobal, saveIdGlobal, getFormConf
 } from '@/components/FormGenerator/utils/db'
 import loadBeautifier from '@/components/FormGenerator/utils/loadBeautifier'
-import {CustomFormData} from "@/components/FormGenerator/models/CustomFormData";
-import {Field} from "@/components/FormGenerator/models/Field";
+import CustomFormData from "@/components/FormGenerator/models/CustomFormData";
+import Field from "@/components/FormGenerator/models/Field";
 
 let beautifier
 const emptyActiveData = { style: {}, autosize: {} }

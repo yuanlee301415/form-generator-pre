@@ -1,6 +1,15 @@
 <template>
   <div style="position: relative;width: 100%; height: 100%;">
     <div class="left-board">
+      <el-select v-model="dataSource" size="small" @change="handleChangeDataSource">
+        <template #prefix><b>表单数据：</b></template>
+        <el-option value="1">1</el-option>
+        <el-option value="2">2</el-option>
+        <el-option value="defaultValue">defaultValue</el-option>
+        <el-option value="dynamic">dynamic</el-option>
+        <el-option value="cascader">cascader</el-option>
+        <el-option value="all">all</el-option>
+      </el-select>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
           <div v-for="(item, listIndex) in leftComponents" :key="listIndex">
@@ -128,8 +137,8 @@ import draggable from 'vuedraggable'
 import { debounce } from 'throttle-debounce'
 import { saveAs } from 'file-saver'
 import ClipboardJS from 'clipboard'
-import { Field } from "@/components/FormGenerator/models/Field";
-import { CustomFormData } from "@/components/FormGenerator/models/CustomFormData";
+import Field from "@/components/FormGenerator/models/Field";
+import CustomFormData from "@/components/FormGenerator/models/CustomFormData";
 import Parser from '@/components/FormGenerator/parser/Parser.vue'
 import render from '@/components/FormGenerator/render/render'
 import FormDrawer from '@/components/FormGenerator/components/FormDrawer.vue'
@@ -176,6 +185,8 @@ export default {
   data() {
     return {
       drawer: false,
+      dataSource: window.localStorage.getItem('editFormDataSource') || '',
+
       idGlobal,
       formConf: new CustomFormData(),
       inputComponents,
@@ -247,7 +258,7 @@ export default {
   },
   created() {
     console.log('activeData:', this.activeData)
-    this.initData()
+    this.initData('')
   },
   mounted() {
     loadBeautifier(btf => {
@@ -257,18 +268,26 @@ export default {
   methods: {
     initData() {
       this.$axios({
-        url: '/mock-data/formData-3.json'
+        url: `/mock-data/formData${this.dataSource ? '-' + this.dataSource : ''}.json`
       }).then(res => {
         console.log('res.data:', res.data)
-        this.formConf = new CustomFormData(res.data)
+        const data = res.data
+        const fields = data.fields
+        delete data.fields
+        this.formConf = new CustomFormData(data)
         console.log('formConf:', this.formConf)
 
-        this.drawingList = res.data.fields && res.data.fields.map(_ => new Field(_)) || []
+        this.drawingList = fields && fields.map(_ => new Field(_)) || []
         console.log('drawingList:', this.drawingList)
 
         this.drawingList[0] && this.activeFormItem(this.drawingList[0])
       })
     },
+    handleChangeDataSource() {
+      this.initData()
+      window.localStorage.setItem('editFormDataSource', this.dataSource)
+    },
+
     setObjectValueReduce(obj, strKeys, data) {
       const arr = strKeys.split('.')
       arr.reduce((pre, item, i) => {
