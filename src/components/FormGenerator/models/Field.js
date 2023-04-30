@@ -1,5 +1,4 @@
 import FieldConfig from "./FieldConfig";
-import FieldOption from "./FieldOption";
 
 /**
  * 表单项 Model
@@ -305,8 +304,8 @@ export default class Field {
         this.__vModel__ = __vModel__
         this.placeholder = placeholder
         this.style = style
-        this.readonly = !!readonly
-        this.disabled = !!disabled
+        this.readonly = readonly
+        this.disabled = disabled
         this.props = props
         this.gutter = gutter
         this.type = type
@@ -321,11 +320,11 @@ export default class Field {
         this.precision = precision
         this.maxlength = maxlength
         this.options = options
-        this.range = !!range
+        this.range = range
         this.size = size
-        this.multiple = !!multiple
-        this.clearable = !!clearable
-        this.filterable = !!filterable
+        this.multiple = multiple
+        this.clearable = clearable
+        this.filterable = filterable
         this.format = format
         this.accept = accept
         this.action = action

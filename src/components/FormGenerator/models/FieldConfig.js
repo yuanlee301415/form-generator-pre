@@ -118,20 +118,37 @@ export default class FieldConfig {
      */
     document
 
+    /**
+     * 组件远程获取的数据
+     * @type string
+     */
+    dataConsumer
+
+    /**
+     * 数据字典 `id`
+     * @type string
+     */
+    dict
+
+    /**
+     * 是否显示边框
+     * @type boolean
+     */
+    border
+
     constructor(_) {
-        // console.log('FieldConfig>arg:', _)
         const {
             label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
-            formId, renderKey, children, dataType, url, method, dataPath, optionType, document,
+            formId, renderKey, children, dataType, url, method, dataPath, optionType, document, dataConsumer, dict, border,
             ...rest
         } = {..._}
         this.label = label
         this.labelWidth = labelWidth
-        this.showLabel = !!showLabel
-        this.changeTag = !!changeTag
+        this.showLabel = showLabel
+        this.changeTag = changeTag
         this.tag = tag
         this.tagIcon = tagIcon
-        this.required = !!required
+        this.required = required
         this.layout = layout
         this.span = span
         this.regList = regList && regList.map(_ => new FieldValidate(_))
@@ -145,6 +162,9 @@ export default class FieldConfig {
         this.dataPath = dataPath
         this.optionType = optionType
         this.document = void document
+        this.dataConsumer = dataConsumer
+        this.dict = dict
+        this.border = border
 
         if (Object.keys(rest).length) {
             console.warn('FieldConfig>rest:')
