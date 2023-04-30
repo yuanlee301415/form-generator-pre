@@ -334,7 +334,7 @@ export default {
       }
     },
     activeFormItem(currentItem) {
-      this.activeData = new Field(currentItem)
+      this.activeData = currentItem
       this.activeId = this.activeData.__config__.formId
       console.log('activeFormItem>activeData:', JSON.parse(JSON.stringify(this.activeData)))
     },
