@@ -5,15 +5,15 @@
     "items": [
       {
         "label": "优先级-低",
-        "value": 0
+        "value": "xyj-0"
       },
       {
         "label": "优先级-中",
-        "value": 1
+        "value": "xyj-1"
       },
       {
         "label": "优先级-高",
-        "value": 2
+        "value": "xyj-2"
       }
     ]
   },
@@ -23,15 +23,15 @@
     "items": [
       {
         "label": "紧急度-低",
-        "value": 0
+        "value": "jjd-0"
       },
       {
         "label": "紧急度-中",
-        "value": 1
+        "value": "jjd-1"
       },
       {
         "label": "紧急度-高",
-        "value": 2
+        "value": "jjd-2"
       }
     ]
   },
@@ -41,15 +41,15 @@
     "items": [
       {
         "label": "影响度-低",
-        "value": 0
+        "value": "yxd-0"
       },
       {
         "label": "影响度-中",
-        "value": 1
+        "value": "yxd-1"
       },
       {
         "label": "影响度-高",
-        "value": 2
+        "value": "yxd-2"
       }
     ]
   },
@@ -59,15 +59,15 @@
     "items": [
       {
         "label": "来源类型-1",
-        "value": 0
+        "value": "lylx-1"
       },
       {
         "label": "来源类型-2",
-        "value": 1
+        "value": "lylx-2"
       },
       {
         "label": "来源类型-3",
-        "value": 2
+        "value": "lylx-3"
       }
     ]
   },
@@ -77,15 +77,15 @@
     "items": [
       {
         "label": "标签-1",
-        "value": 0
+        "value": "tag-1"
       },
       {
         "label": "标签-2",
-        "value": 1
+        "value": "tag-2"
       },
       {
         "label": "标签-3",
-        "value": 2
+        "value": "tag-3"
       }
     ]
   }

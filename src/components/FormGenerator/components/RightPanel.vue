@@ -874,8 +874,8 @@ export default {
     handleChooseDict() {
       const dict = this.dicts.find(_ => _.id ===this.activeData.__config__.dict)
       this.$set(this.activeData.__slot__, 'options', dict.items)
-      this.$set(this.activeData.__config__, 'defaultValue', [])
-      console.log('handleChooseDict:', this.activeData)
+      this.$set(this.activeData.__config__, 'defaultValue', (this.activeData.__config__.defaultValue !== void 0 && this.activeData.__config__.defaultValue !== null) ? this.activeData.__config__.defaultValue.constructor() : void 0)
+      console.log('handleChooseDict>activeData:', this.activeData)
     },
     addReg() {
       this.activeData.__config__.regList.push({
