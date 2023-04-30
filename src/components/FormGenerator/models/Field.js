@@ -1,5 +1,4 @@
 import FieldConfig from "./FieldConfig";
-import FieldOption from "./FieldOption";
 
 /**
  * 表单项 Model
