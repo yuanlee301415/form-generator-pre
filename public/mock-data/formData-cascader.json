@@ -1,96 +1,126 @@
 {
-  "MOCK": "级联选择",
-  "fields": [
-    {
-      "__config__": {
-        "label": "数据版本",
-        "labelWidth": null,
-        "showLabel": true,
-        "changeTag": true,
-        "tag": "el-input",
-        "tagIcon": "input",
-        "defaultValue": "cascader-级联选择",
-        "required": true,
-        "layout": "colFormItem",
-        "span": 24,
-        "document": "https://element.eleme.cn/#/zh-CN/component/input",
-        "regList": [],
-        "formId": 101,
-        "renderKey": 1682669881575
-      },
-      "__slot__": {
-        "prepend": "",
-        "append": ""
-      },
-      "placeholder": "请输入数据版本",
-      "style": {
-        "width": "100%"
-      },
-      "clearable": false,
-      "prefix-icon": "el-icon-eleme",
-      "suffix-icon": "",
-      "maxlength": null,
-      "show-word-limit": false,
-      "readonly": false,
-      "disabled": true,
-      "__vModel__": "field101"
+  "fields": [{
+    "__config__": {
+      "label": "数据版本",
+      "labelWidth": null,
+      "showLabel": true,
+      "changeTag": true,
+      "tag": "el-input",
+      "tagIcon": "input",
+      "required": true,
+      "layout": "colFormItem",
+      "span": 24,
+      "regList": [],
+      "defaultValue": "cascader-级联选择",
+      "formId": 101,
+      "renderKey": 1682669881575
     },
-    {
-      "__config__": {
-        "label": "级联选择",
-        "url": "https://www.fastmock.site/mock/f8d7a54fb1e60561e2f720d5a810009d/fg/cascaderList",
-        "method": "get",
-        "dataPath": "list",
-        "dataConsumer": "options",
-        "showLabel": true,
-        "labelWidth": null,
-        "tag": "el-cascader",
-        "tagIcon": "cascader",
-        "layout": "colFormItem",
-        "defaultValue": [],
-        "dataType": "dynamic",
-        "span": 24,
-        "required": true,
-        "regList": [],
-        "changeTag": true,
-        "document": "https://element.eleme.cn/#/zh-CN/component/cascader",
-        "formId": 102,
-        "renderKey": "1021682581007007"
-      },
-      "options": [
-        {
-          "id": 1,
-          "value": 1,
-          "label": "动态选项1",
-          "children": [
-            {
-              "id": 2,
-              "value": 2,
-              "label": "动态选项1-1"
-            }
-          ]
-        }
-      ],
-      "placeholder": "请选择级联选择",
-      "style": {
-        "width": "100%"
-      },
+    "__slot__": {
+      "prepend": "",
+      "append": ""
+    },
+    "__vModel__": "field101",
+    "placeholder": "请输入数据版本",
+    "style": {
+      "width": "100%"
+    },
+    "readonly": false,
+    "disabled": true,
+    "maxlength": null,
+    "range": false,
+    "multiple": false,
+    "clearable": false,
+    "filterable": false,
+    "prefix-icon": "el-icon-eleme",
+    "suffix-icon": "",
+    "show-word-limit": false
+  }, {
+    "__config__": {
+      "label": "级联选择",
+      "labelWidth": null,
+      "showLabel": true,
+      "changeTag": true,
+      "tag": "el-cascader",
+      "tagIcon": "cascader",
+      "required": true,
+      "layout": "colFormItem",
+      "span": 24,
+      "regList": [],
+      "defaultValue": [],
+      "formId": 102,
+      "renderKey": "1021682581007007",
+      "dataType": "dynamic",
+      "url": "https://www.fastmock.site/mock/f8d7a54fb1e60561e2f720d5a810009d/fg/cascaderList",
+      "method": "get",
+      "dataPath": "list",
+      "dataConsumer": "options"
+    },
+    "__vModel__": "field102",
+    "placeholder": "请选择级联选择",
+    "style": {
+      "width": "100%"
+    },
+    "readonly": false,
+    "disabled": false,
+    "separator": "/",
+    "props": {
       "props": {
-        "props": {
-          "multiple": false,
-          "label": "label",
-          "value": "value",
-          "children": "children"
-        }
-      },
-      "show-all-levels": true,
-      "disabled": false,
-      "clearable": true,
-      "filterable": false,
-      "separator": "/",
-      "__vModel__": "field102"
-    }
-  ],
+        "multiple": false,
+        "label": "label",
+        "value": "value",
+        "children": "children"
+      }
+    },
+    "options": [{
+      "id": 1,
+      "value": 1,
+      "label": "动态选项1",
+      "children": [{
+        "id": 2,
+        "value": 2,
+        "label": "动态选项1-1"
+      }]
+    }],
+    "range": false,
+    "multiple": false,
+    "clearable": true,
+    "filterable": false,
+    "show-all-levels": true
+  }, {
+    "__config__": {
+      "label": "下拉选择",
+      "showLabel": true,
+      "labelWidth": null,
+      "tag": "el-select",
+      "tagIcon": "select",
+      "layout": "colFormItem",
+      "span": 24,
+      "required": true,
+      "regList": [],
+      "changeTag": true,
+      "document": "https://element.eleme.cn/#/zh-CN/component/select",
+      "formId": 109,
+      "renderKey": "1091682757818942"
+    },
+    "__slot__": {
+      "options": [{
+        "label": "选项一",
+        "value": 1
+      }, {
+        "label": "选项二",
+        "value": 2
+      }]
+    },
+    "placeholder": "请选择下拉选择",
+    "style": {
+      "width": "100%"
+    },
+    "clearable": true,
+    "disabled": false,
+    "filterable": false,
+    "multiple": false,
+    "__vModel__": "field109"
+  }],
   "formRef": "elForm",
   "formModel": "formData",
   "size": "medium",
@@ -99,6 +129,5 @@
   "formRules": "rules",
   "gutter": 15,
   "disabled": false,
-  "span": 24,
-  "formBtns": true
+  "span": 24
 }

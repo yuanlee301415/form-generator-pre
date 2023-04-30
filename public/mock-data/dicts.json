@@ -1,0 +1,92 @@
+[
+  {
+    "id": "xyj",
+    "title": "优先级",
+    "items": [
+      {
+        "label": "优先级-低",
+        "value": 0
+      },
+      {
+        "label": "优先级-中",
+        "value": 1
+      },
+      {
+        "label": "优先级-高",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "jjd",
+    "title": "紧急度",
+    "items": [
+      {
+        "label": "紧急度-低",
+        "value": 0
+      },
+      {
+        "label": "紧急度-中",
+        "value": 1
+      },
+      {
+        "label": "紧急度-高",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "yxd",
+    "title": "影响度",
+    "items": [
+      {
+        "label": "影响度-低",
+        "value": 0
+      },
+      {
+        "label": "影响度-中",
+        "value": 1
+      },
+      {
+        "label": "影响度-高",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "lylx",
+    "title": "来源类型",
+    "items": [
+      {
+        "label": "来源类型-1",
+        "value": 0
+      },
+      {
+        "label": "来源类型-2",
+        "value": 1
+      },
+      {
+        "label": "来源类型-3",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "id": "tag",
+    "title": "标签",
+    "items": [
+      {
+        "label": "标签-1",
+        "value": 0
+      },
+      {
+        "label": "标签-2",
+        "value": 1
+      },
+      {
+        "label": "标签-3",
+        "value": 2
+      }
+    ]
+  }
+]
