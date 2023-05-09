@@ -301,8 +301,8 @@
           </el-form-item>
 
           <template v-if="activeData.__config__.tag === 'GroupTitle'">
-            <el-form-item label="标题文字">
-              <el-input v-model="activeData.__slot__.default" placeholder="请输入标题文字" />
+            <el-form-item label="标题内容">
+              <el-input v-model="activeData.__slot__.default" placeholder="请输入标题内容" />
             </el-form-item>
           </template>
 

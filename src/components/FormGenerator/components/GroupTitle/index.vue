@@ -1,5 +1,7 @@
 <template>
-  <h1><slot/></h1>
+  <el-col>
+    <h1><slot/></h1>
+  </el-col>
 </template>
 
 <script>

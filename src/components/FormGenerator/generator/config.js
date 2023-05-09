@@ -632,16 +632,15 @@ export const layoutComponents = [
   {
     __config__: {
       label: '标题',
-      showLabel: void 0,
-      changeTag: void 0,
-      labelWidth: '0',
+      showLabel: false,
+      changeTag: false,
       tag: 'GroupTitle',
       tagIcon: '',
       span: 24,
       layout: 'colFormItem',
     },
     __slot__: {
-      default: '标题文字'
+      default: '标题内容'
     },
     size: 'medium'
   }
