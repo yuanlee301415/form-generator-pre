@@ -1,6 +1,6 @@
 <template functional>
   <el-col>
-    <h1 :style="{'text-align': props.textAlign, 'font-size': props.fontSize + 'rem', 'line-height': props.lineHeight }" :class="{border: props.border}"><slot/></h1>
+    <h1 :style="{'text-align': props.textAlign, 'font-size': props.fontSize + 'rem', 'line-height': props.lineHeight }" :class="{bottomBorder: props.bottomBorder}"><slot/></h1>
   </el-col>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 h1 {
   color: #444;
 }
-.border {
-  border-bottom: 1px solid #444;
+.bottomBorder {
+  border-bottom: 1px solid #ccc;
 }
 </style>

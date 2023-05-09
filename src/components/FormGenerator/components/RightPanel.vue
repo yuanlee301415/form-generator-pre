@@ -108,6 +108,10 @@
             <el-input-number v-model="activeData.lineHeight" :precision="1" :step="0.1" :max="10" :min="0.1"></el-input-number>
           </el-form-item>
 
+          <el-form-item v-if="activeData.bottomBorder!==undefined" label="下边框">
+            <el-switch v-model="activeData.bottomBorder" />
+          </el-form-item>
+
           <el-form-item v-if="activeData.__config__.labelWidth!==undefined" label="标签宽度">
             <el-input v-model.number="activeData.__config__.labelWidth" type="number" placeholder="请输入标签宽度" />
           </el-form-item>
