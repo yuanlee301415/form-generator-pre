@@ -643,6 +643,6 @@ export const layoutComponents = [
     __slot__: {
       default: '标题内容'
     },
-    size: 'medium'
+    textAlign: 'center'
   }
 ]

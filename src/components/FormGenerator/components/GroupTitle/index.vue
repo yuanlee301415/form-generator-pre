@@ -1,6 +1,6 @@
 <template functional>
   <el-col>
-    <h1><slot/></h1>
+    <h1 :style="{'text-align': props.textAlign}"><slot/></h1>
   </el-col>
 </template>
 

@@ -91,6 +91,15 @@
               <el-radio-button label="bottom" />
             </el-radio-group>
           </el-form-item>
+
+          <el-form-item v-if="activeData.textAlign!==undefined" label="对齐方式">
+            <el-radio-group v-model="activeData.textAlign">
+              <el-radio-button label="left">左</el-radio-button>
+              <el-radio-button label="center">中</el-radio-button>
+              <el-radio-button label="right">右</el-radio-button>
+            </el-radio-group>
+          </el-form-item>
+
           <el-form-item v-if="activeData.__config__.labelWidth!==undefined" label="标签宽度">
             <el-input v-model.number="activeData.__config__.labelWidth" type="number" placeholder="请输入标签宽度" />
           </el-form-item>
