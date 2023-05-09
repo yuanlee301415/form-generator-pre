@@ -644,6 +644,8 @@ export const layoutComponents = [
       default: '标题内容'
     },
     textAlign: 'center',
-    fontSize: 1.5
+    fontSize: 1.5,
+    lineHeight: 2,
+    bottomBorder: true,
   }
 ]

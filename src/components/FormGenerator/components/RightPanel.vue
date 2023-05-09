@@ -101,7 +101,11 @@
           </el-form-item>
 
           <el-form-item v-if="activeData.fontSize!==undefined" label="字体大小">
-            <el-input-number v-model="activeData.fontSize" :precision="1" :step="0.5" :max="10" :min="0.1"></el-input-number>
+            <el-input-number v-model="activeData.fontSize" :precision="1" :step="0.1" :max="10" :min="0.1"></el-input-number>
+          </el-form-item>
+
+          <el-form-item v-if="activeData.lineHeight!==undefined" label="行高">
+            <el-input-number v-model="activeData.lineHeight" :precision="1" :step="0.1" :max="10" :min="0.1"></el-input-number>
           </el-form-item>
 
           <el-form-item v-if="activeData.__config__.labelWidth!==undefined" label="标签宽度">
