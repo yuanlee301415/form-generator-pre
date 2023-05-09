@@ -299,6 +299,13 @@
           >
             <el-input v-model="activeData.__slot__.default" placeholder="请输入按钮文字" />
           </el-form-item>
+
+          <template v-if="activeData.__config__.tag === 'GroupTitle'">
+            <el-form-item label="标题文字">
+              <el-input v-model="activeData.__slot__.default" placeholder="请输入标题文字" />
+            </el-form-item>
+          </template>
+
           <el-form-item v-if="activeData['range-separator'] !== undefined" label="分隔符">
             <el-input v-model="activeData['range-separator']" placeholder="请输入分隔符" />
           </el-form-item>

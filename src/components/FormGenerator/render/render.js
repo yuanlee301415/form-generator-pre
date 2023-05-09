@@ -11,6 +11,11 @@ const keys = slotsFiles.keys() || []
 keys.forEach(key => {
   const tag = key.replace(/^\.\/(.*)\.\w+$/, '$1')
   const value = slotsFiles(key).default
+  console.log({
+    key,
+    tag,
+    value
+  })
   componentChild[tag] = value
 })
 
