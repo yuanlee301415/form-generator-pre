@@ -139,7 +139,6 @@ import { saveAs } from 'file-saver'
 import Field from "@/components/FormGenerator/models/Field";
 import CustomFormData from "@/components/FormGenerator/models/CustomFormData";
 import Parser from '@/components/FormGenerator/parser/Parser.vue'
-import render from '@/components/FormGenerator/render/render'
 import FormDrawer from '@/components/FormGenerator/components/FormDrawer.vue'
 import JsonDrawer from '@/components/FormGenerator/components/JsonDrawer.vue'
 import RightPanel from '@/components/FormGenerator/components/RightPanel.vue'
