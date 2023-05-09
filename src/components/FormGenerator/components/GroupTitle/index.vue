@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <el-col>
     <h1><slot/></h1>
   </el-col>
@@ -6,13 +6,7 @@
 
 <script>
 export default {
-  name: "GroupTitle",
-  props: {
-    value: {
-      type: String,
-      default: null
-    }
-  }
+  name: "GroupTitle"
 }
 </script>
 

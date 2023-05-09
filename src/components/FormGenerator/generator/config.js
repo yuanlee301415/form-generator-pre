@@ -630,6 +630,7 @@ export const layoutComponents = [
   },
 
   {
+    functional: true,
     __config__: {
       label: '标题',
       showLabel: false,
