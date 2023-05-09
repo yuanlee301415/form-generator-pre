@@ -635,7 +635,7 @@ export const layoutComponents = [
       defaultValue: '标题内容',
       showLabel: void 0,
       changeTag: void 0,
-      labelWidth: void 0,
+      labelWidth: '0',
       tag: 'GroupTitle',
       tagIcon: '',
       // span: 24,
