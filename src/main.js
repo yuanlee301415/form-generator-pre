@@ -9,8 +9,10 @@ import '@/assets/style.css'
 import '@/components/FormGenerator/styles/index.scss'
 import '@/components/FormGenerator/icons'
 import Tinymce from '@/components/FormGenerator/tinymce/index.vue'
+import GroupTitle from '@/components/FormGenerator/components/GroupTitle/index.vue'
 
 Vue.component('tinymce', Tinymce)
+Vue.component('GroupTitle', GroupTitle)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios

@@ -627,5 +627,23 @@ export const layoutComponents = [
     type: 'default',
     justify: 'start',
     align: 'top'
+  },
+
+  {
+    __config__: {
+      label: '标题',
+      defaultValue: '标题内容',
+      showLabel: void 0,
+      changeTag: void 0,
+      labelWidth: void 0,
+      tag: 'GroupTitle',
+      tagIcon: '',
+      // span: 24,
+      layout: 'colFormItem',
+    },
+/*    __slot__: {
+      default: '主要按钮'
+    },*/
+    size: 'medium'
   }
 ]
