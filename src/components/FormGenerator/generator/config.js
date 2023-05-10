@@ -641,11 +641,11 @@ export const layoutComponents = [
       layout: 'colFormItem',
     },
     __slot__: {
-      default: '标题内容'
+      default: null
     },
     textAlign: 'center',
     fontSize: 1.5,
-    lineHeight: 2,
+    lineHeight: 1.5,
     bottomBorder: true,
   }
 ]
