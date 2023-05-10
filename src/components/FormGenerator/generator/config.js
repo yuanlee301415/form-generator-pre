@@ -641,7 +641,7 @@ export const layoutComponents = [
       layout: 'colFormItem',
     },
     __slot__: {
-      default: null
+      default: '标题内容'
     },
     textAlign: 'center',
     fontSize: 1.5,
