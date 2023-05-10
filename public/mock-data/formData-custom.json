@@ -13,7 +13,28 @@
         "renderKey": "1141683684132367"
       },
       "__slot__": {
-        "default": "Empty"
+        "default": "自定义组件"
+      },
+      "functional": true,
+      "textAlign": "center",
+      "fontSize": 2,
+      "lineHeight": 2,
+      "bottomBorder": true
+    },
+    {
+      "__config__": {
+        "label": "标题",
+        "showLabel": false,
+        "changeTag": false,
+        "tag": "GroupTitle",
+        "tagIcon": "",
+        "layout": "colFormItem",
+        "span": 24,
+        "formId": 114,
+        "renderKey": "1141683684132367"
+      },
+      "__slot__": {
+        "default": "标题内容"
       },
       "functional": true,
       "textAlign": "center",
@@ -25,11 +46,9 @@
   "formRef": "elForm",
   "formModel": "formData",
   "size": "medium",
-  "labelPosition": "right",
   "labelWidth": 100,
   "formRules": "rules",
   "gutter": 15,
   "disabled": false,
-  "span": 24,
-  "formBtns": false
+  "span": 24
 }
