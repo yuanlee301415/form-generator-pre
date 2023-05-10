@@ -1,40 +1,27 @@
 {
-  "fields": [{
-    "__config__": {
-      "label": "数据版本",
-      "labelWidth": null,
-      "showLabel": true,
-      "changeTag": true,
-      "tag": "el-input",
-      "tagIcon": "input",
-      "required": true,
-      "layout": "colFormItem",
-      "span": 24,
-      "regList": [],
-      "defaultValue": "动态数据",
-      "formId": 101,
-      "renderKey": 1682669881575
+  "fields": [
+    {
+      "__config__": {
+        "label": "标题",
+        "showLabel": false,
+        "changeTag": false,
+        "tag": "GroupTitle",
+        "tagIcon": "",
+        "layout": "colFormItem",
+        "span": 24,
+        "formId": 114,
+        "renderKey": "1141683684132367"
+      },
+      "__slot__": {
+        "default": "动态数据"
+      },
+      "functional": true,
+      "textAlign": "center",
+      "fontSize": 2,
+      "lineHeight": 2,
+      "bottomBorder": true
     },
-    "__slot__": {
-      "prepend": "",
-      "append": ""
-    },
-    "__vModel__": "field101",
-    "placeholder": "请输入数据版本",
-    "style": {
-      "width": "100%"
-    },
-    "readonly": false,
-    "disabled": true,
-    "maxlength": null,
-    "range": false,
-    "multiple": false,
-    "clearable": false,
-    "filterable": false,
-    "prefix-icon": "el-icon-eleme",
-    "suffix-icon": "",
-    "show-word-limit": false
-  }, {
+    {
     "__config__": {
       "label": "级联选择",
       "labelWidth": null,

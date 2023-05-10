@@ -5,10 +5,10 @@
         <template #prefix><b>表单数据：</b></template>
         <el-option value="1">1</el-option>
         <el-option value="2">2</el-option>
-        <el-option value="defaultValue">defaultValue</el-option>
-        <el-option value="dynamic">dynamic</el-option>
-        <el-option value="cascader">cascader</el-option>
-        <el-option value="all">all</el-option>
+        <el-option value="defaultValue">默认值</el-option>
+        <el-option value="cascader">级联</el-option>
+        <el-option value="all">All</el-option>
+        <el-option value="custom">自定义组件</el-option>
       </el-select>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
