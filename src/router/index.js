@@ -23,6 +23,10 @@ export const routes = [
 
   { // Form
     path: '/form',
+    name: 'CustomForm',
+    meta: {
+      title: '表单'
+    },
     component: Layout,
     redirect: '/form/',
     children: [
