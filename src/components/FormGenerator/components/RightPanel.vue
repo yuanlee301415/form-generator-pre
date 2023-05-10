@@ -91,6 +91,33 @@
               <el-radio-button label="bottom" />
             </el-radio-group>
           </el-form-item>
+
+          <template v-if="activeData.__config__.tag === 'GroupTitle'">
+            <el-form-item label="标题内容">
+              <el-input v-model="activeData.__slot__.default" :rows="2" type="textarea" placeholder="请输入标题内容" />
+            </el-form-item>
+          </template>
+
+          <el-form-item v-if="activeData.textAlign!==undefined" label="对齐方式">
+            <el-radio-group v-model="activeData.textAlign">
+              <el-radio-button label="left">左</el-radio-button>
+              <el-radio-button label="center">中</el-radio-button>
+              <el-radio-button label="right">右</el-radio-button>
+            </el-radio-group>
+          </el-form-item>
+
+          <el-form-item v-if="activeData.fontSize!==undefined" label="字体大小">
+            <el-input-number v-model="activeData.fontSize" :precision="1" :step="0.1" :max="10" :min="0.1"></el-input-number>
+          </el-form-item>
+
+          <el-form-item v-if="activeData.lineHeight!==undefined" label="行高">
+            <el-input-number v-model="activeData.lineHeight" :precision="1" :step="0.1" :max="10" :min="0.1"></el-input-number>
+          </el-form-item>
+
+          <el-form-item v-if="activeData.bottomBorder!==undefined" label="下边框">
+            <el-switch v-model="activeData.bottomBorder" />
+          </el-form-item>
+
           <el-form-item v-if="activeData.__config__.labelWidth!==undefined" label="标签宽度">
             <el-input v-model.number="activeData.__config__.labelWidth" type="number" placeholder="请输入标签宽度" />
           </el-form-item>
@@ -299,6 +326,7 @@
           >
             <el-input v-model="activeData.__slot__.default" placeholder="请输入按钮文字" />
           </el-form-item>
+
           <el-form-item v-if="activeData['range-separator'] !== undefined" label="分隔符">
             <el-input v-model="activeData['range-separator']" placeholder="请输入分隔符" />
           </el-form-item>

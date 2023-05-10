@@ -627,5 +627,25 @@ export const layoutComponents = [
     type: 'default',
     justify: 'start',
     align: 'top'
+  },
+
+  {
+    functional: true,
+    __config__: {
+      label: '标题',
+      showLabel: false,
+      changeTag: false,
+      tag: 'GroupTitle',
+      tagIcon: '',
+      span: 24,
+      layout: 'colFormItem',
+    },
+    __slot__: {
+      default: '标题内容'
+    },
+    textAlign: 'center',
+    fontSize: 1.5,
+    lineHeight: 1.5,
+    bottomBorder: true,
   }
 ]
