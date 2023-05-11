@@ -43,6 +43,27 @@
       "fontSize": 2,
       "lineHeight": 2,
       "bottomBorder": true
+    },
+    {
+      "__config__": {
+        "cnName": "描述说明",
+        "label": "重要说明",
+        "labelWidth": null,
+        "showLabel": true,
+        "tag": "GfDescription",
+        "tagIcon": "",
+        "layout": "colFormItem",
+        "span": 24,
+        "formId": 105,
+        "renderKey": "1051683788990703"
+      },
+      "__slot__": {
+        "default": "重要说明！！重要说明！！重要说明！！重要说明！！"
+      },
+      "__vModel__": "field105",
+      "functional": true,
+      "fontSize": 1,
+      "color": "#E3380E"
     }
   ],
   "formRef": "elForm",

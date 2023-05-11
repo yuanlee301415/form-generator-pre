@@ -124,7 +124,7 @@
           <el-form-item v-if="activeData.style&&activeData.style.width!==undefined" label="组件宽度">
             <el-input v-model="activeData.style.width" placeholder="请输入组件宽度" clearable />
           </el-form-item>
-          <el-form-item v-if="activeData.__vModel__!==undefined" label="默认值">
+          <el-form-item v-if="!['GfTitle', 'GfDescription'].includes(activeData.__config__.tag) && activeData.__vModel__!==undefined" label="默认值">
             <el-input
               :value="setDefaultValue(activeData.__config__.defaultValue)"
               placeholder="请输入默认值"
@@ -491,14 +491,20 @@
             <el-color-picker v-model="activeData['inactive-color']" />
           </el-form-item>
 
+          <el-form-item v-if="activeData['color'] !== undefined" label="颜色">
+            <el-color-picker v-model="activeData['color']" />
+          </el-form-item>
+
           <el-form-item v-if="activeData.__config__.showLabel !== undefined
             && activeData.__config__.labelWidth !== undefined" label="显示标签"
           >
             <el-switch v-model="activeData.__config__.showLabel" />
           </el-form-item>
+<!--
           <el-form-item v-if="activeData.branding !== undefined" label="品牌烙印">
             <el-switch v-model="activeData.branding" @input="changeRenderKey" />
           </el-form-item>
+-->
           <el-form-item v-if="activeData['allow-half'] !== undefined" label="允许半选">
             <el-switch v-model="activeData['allow-half']" />
           </el-form-item>
