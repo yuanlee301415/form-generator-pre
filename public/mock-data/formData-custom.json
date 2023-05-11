@@ -1,7 +1,6 @@
 {
   "fields": [
     {
-      "functional": true,
       "__config__": {
         "cnName": "标题",
         "label": "标题",
@@ -23,7 +22,6 @@
       "__vModel__": "field109"
     },
     {
-      "functional": true,
       "__config__": {
         "cnName": "标题",
         "label": "标题",
@@ -45,7 +43,6 @@
       "__vModel__": "field111"
     },
     {
-      "functional": true,
       "__config__": {
         "cnName": "描述说明",
         "label": "重要说明",

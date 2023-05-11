@@ -16,7 +16,6 @@
       "__slot__": {
         "default": "1"
       },
-      "functional": true,
       "textAlign": "center",
       "fontSize": 2,
       "lineHeight": 2,

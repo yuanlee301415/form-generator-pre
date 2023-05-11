@@ -16,7 +16,6 @@
       "__slot__": {
         "default": "All-online"
       },
-      "functional": true,
       "textAlign": "center",
       "fontSize": 2,
       "lineHeight": 2,

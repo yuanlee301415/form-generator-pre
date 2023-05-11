@@ -16,7 +16,6 @@
       "__slot__": {
         "default": "级联"
       },
-      "functional": true,
       "textAlign": "center",
       "fontSize": 2,
       "lineHeight": 2,
