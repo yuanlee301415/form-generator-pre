@@ -630,7 +630,6 @@ export const layoutComponents = [
   },
 
   {
-    functional: true,
     __config__: {
       cnName: '标题',
       label: '标题',
@@ -650,7 +649,6 @@ export const layoutComponents = [
   },
 
   {
-    functional: true,
     __config__: {
       cnName: '描述说明',
       label: '描述说明',
