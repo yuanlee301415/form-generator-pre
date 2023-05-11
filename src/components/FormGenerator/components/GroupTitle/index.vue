@@ -51,5 +51,6 @@ h1 {
   color: #444;
   border-bottom-width: 1px;
   border-bottom-style: solid;
+  word-break: break-all;
 }
 </style>

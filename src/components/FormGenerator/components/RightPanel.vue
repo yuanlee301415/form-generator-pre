@@ -98,6 +98,12 @@
             </el-form-item>
           </template>
 
+          <template v-if="activeData.__config__.tag === 'GfDescription'">
+            <el-form-item label="描述说明内容">
+              <el-input v-model="activeData.__slot__.default" :rows="2" type="textarea" placeholder="请输入描述说明内容" />
+            </el-form-item>
+          </template>
+
           <el-form-item v-if="activeData.textAlign!==undefined" label="对齐方式">
             <el-radio-group v-model="activeData.textAlign">
               <el-radio-button label="left">左</el-radio-button>

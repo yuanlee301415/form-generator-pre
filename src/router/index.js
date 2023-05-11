@@ -76,6 +76,14 @@ export const routes = [
         },
         component: () => import('@/views/custom-components/group-title-demo')
       },
+      {
+        path: 'description',
+        name: 'DescriptionDemo',
+        meta: {
+          title: '描述'
+        },
+        component: () => import('@/views/custom-components/description-demo.vue')
+      },
     ]
   }
 ]

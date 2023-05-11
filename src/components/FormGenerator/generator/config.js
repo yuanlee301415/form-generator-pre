@@ -641,11 +641,29 @@ export const layoutComponents = [
       layout: 'colFormItem',
     },
     __slot__: {
-      default: '标题内容'
+      default: ''
     },
     textAlign: 'center',
     fontSize: 1.5,
     lineHeight: 1.5,
     bottomBorder: true,
+  },
+
+  {
+    functional: true,
+    __config__: {
+      label: '描述说明',
+      showLabel: false,
+      changeTag: false,
+      tag: 'GfDescription',
+      tagIcon: '',
+      span: 24,
+      layout: 'colFormItem',
+    },
+    __slot__: {
+      default: ''
+    },
+    fontSize: 1,
+    color: null,
   }
 ]
