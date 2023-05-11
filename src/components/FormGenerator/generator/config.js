@@ -145,7 +145,46 @@ export const inputComponents = [
     },
     placeholder: '请输入',
     height: 300, // 编辑器高度
-    branding: false // 隐藏右下角品牌烙印
+    branding: false, // 隐藏右下角品牌烙印
+  },
+
+  {
+    __config__: {
+      cnName: '标题',
+      label: '标题',
+      showLabel: false,
+      tag: 'GfTitle',
+      tagIcon: '',
+      span: 24,
+      layout: 'colFormItem',
+      changeTag: true
+    },
+    __slot__: {
+      default: ''
+    },
+    textAlign: 'center',
+    fontSize: 1.5,
+    lineHeight: 1.5,
+    bottomBorder: true,
+  },
+
+  {
+    __config__: {
+      cnName: '描述说明',
+      label: '描述说明',
+      showLabel: true,
+      labelWidth: null,
+      tag: 'GfDescription',
+      tagIcon: '',
+      span: 24,
+      layout: 'colFormItem',
+      changeTag: true,
+    },
+    __slot__: {
+      default: ''
+    },
+    fontSize: 1,
+    color: null,
   }
 ]
 
@@ -627,42 +666,5 @@ export const layoutComponents = [
     type: 'default',
     justify: 'start',
     align: 'top'
-  },
-
-  {
-    __config__: {
-      cnName: '标题',
-      label: '标题',
-      showLabel: false,
-      tag: 'GfTitle',
-      tagIcon: '',
-      span: 24,
-      layout: 'colFormItem',
-    },
-    __slot__: {
-      default: ''
-    },
-    textAlign: 'center',
-    fontSize: 1.5,
-    lineHeight: 1.5,
-    bottomBorder: true,
-  },
-
-  {
-    __config__: {
-      cnName: '描述说明',
-      label: '描述说明',
-      showLabel: true,
-      labelWidth: null,
-      tag: 'GfDescription',
-      tagIcon: '',
-      span: 24,
-      layout: 'colFormItem',
-    },
-    __slot__: {
-      default: ''
-    },
-    fontSize: 1,
-    color: null,
   }
 ]

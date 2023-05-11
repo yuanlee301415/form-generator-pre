@@ -7,7 +7,7 @@ import App from './App.vue'
 import router from '@/router'
 import '@/assets/style.css'
 import '@/components/FormGenerator/styles/index.scss'
-import '@/components/FormGenerator/icons'
+import '@/icons'
 import Tinymce from '@/components/FormGenerator/tinymce/index.vue'
 import GfTitle from '@/components/FormGenerator/components/GfTitle/index.vue'
 import GfDescription from "@/components/FormGenerator/components/GfDescription/index.vue";
