@@ -28,7 +28,7 @@ export const routes = [
       title: '表单'
     },
     component: Layout,
-    redirect: '/form/',
+    redirect: '/form/add',
     children: [
       {
         path: 'add',
@@ -56,6 +56,26 @@ export const routes = [
         },
         component: () => import('@/views/form/view')
       }
+    ]
+  },
+
+  { // 自定义组件
+    path: '/custom-components',
+    name: 'custom-components',
+    meta: {
+      title: '自定义组件'
+    },
+    component: Layout,
+    redirect: '/custom-components/description',
+    children: [
+      {
+        path: 'group-title',
+        name: 'GroupTitleDemo',
+        meta: {
+          title: '标题'
+        },
+        component: () => import('@/views/custom-components/group-title-demo')
+      },
     ]
   }
 ]
