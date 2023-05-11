@@ -92,15 +92,9 @@
             </el-radio-group>
           </el-form-item>
 
-          <template v-if="activeData.__config__.tag === 'GfTitle'">
-            <el-form-item label="标题内容">
-              <el-input v-model="activeData.__slot__.default" :rows="2" type="textarea" placeholder="请输入标题内容" />
-            </el-form-item>
-          </template>
-
-          <template v-if="activeData.__config__.tag === 'GfDescription'">
-            <el-form-item label="描述说明内容">
-              <el-input v-model="activeData.__slot__.default" :rows="2" type="textarea" placeholder="请输入描述说明内容" />
+          <template v-if="['GfTitle', 'GfDescription'].includes(activeData.__config__.tag)">
+            <el-form-item :label="activeData.__config__.cnName + '内容'">
+              <el-input v-model="activeData.__slot__.default" :rows="2" type="textarea" :placeholder="`请输入${activeData.__config__.cnName}内容`" />
             </el-form-item>
           </template>
 

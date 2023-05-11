@@ -2,6 +2,7 @@
   "fields": [
     {
       "__config__": {
+        "cnName": "标题",
         "label": "标题",
         "showLabel": false,
         "changeTag": false,
