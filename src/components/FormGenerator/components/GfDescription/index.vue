@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "Description",
+  name: "GfDescription",
   props: {
     fontSize: {
       type: Number,

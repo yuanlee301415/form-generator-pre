@@ -1,6 +1,6 @@
 <template>
   <el-col>
-    <h1 :style="styleObj">
+    <h1 :style="styleObj" class="gfTitle">
       <slot v-if="$slots.default"/>
       <span v-else>请输入标题内容</span>
     </h1>
@@ -11,7 +11,7 @@
 import {TEXT_ALIGN} from "@/components/FormGenerator/constants";
 
 export default {
-  name: "GroupTitle",
+  name: "GfTitle",
   props: {
     textAlign: {
       type: String,
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-h1 {
+.gfTitle {
   color: #444;
   border-bottom-width: 1px;
   border-bottom-style: solid;

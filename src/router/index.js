@@ -66,19 +66,19 @@ export const routes = [
       title: '自定义组件'
     },
     component: Layout,
-    redirect: '/custom-components/description',
+    redirect: '/custom-components/title',
     children: [
       {
-        path: 'group-title',
-        name: 'GroupTitleDemo',
+        path: 'title',
+        name: 'GfTitleDemo',
         meta: {
           title: '标题'
         },
-        component: () => import('@/views/custom-components/group-title-demo')
+        component: () => import('@/views/custom-components/title-demo')
       },
       {
         path: 'description',
-        name: 'DescriptionDemo',
+        name: 'GfDescriptionDemo',
         meta: {
           title: '描述'
         },

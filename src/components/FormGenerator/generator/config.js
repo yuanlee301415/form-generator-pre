@@ -635,7 +635,7 @@ export const layoutComponents = [
       label: '标题',
       showLabel: false,
       changeTag: false,
-      tag: 'GroupTitle',
+      tag: 'GfTitle',
       tagIcon: '',
       span: 24,
       layout: 'colFormItem',

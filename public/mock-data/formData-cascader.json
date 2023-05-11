@@ -5,7 +5,7 @@
         "label": "标题",
         "showLabel": false,
         "changeTag": false,
-        "tag": "GroupTitle",
+        "tag": "GfTitle",
         "tagIcon": "",
         "layout": "colFormItem",
         "span": 24,

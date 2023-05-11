@@ -31,7 +31,7 @@
     <hr>
     <details open>
       <summary>Basic</summary>
-      <GroupTitle
+      <GfTitle
           :text-align="config.textAlign"
           :font-size="config.fontSize"
           :line-height="config.lineHeight"
@@ -41,26 +41,26 @@
 
     <details open>
       <summary>Slot</summary>
-      <GroupTitle
+      <GfTitle
           :text-align="config.textAlign"
           :font-size="config.fontSize"
           :line-height="config.lineHeight"
           :bottom-border="config.bottomBorder"
       >
-        标题内容：GroupTitleDemo
-      </GroupTitle>
+        标题内容：GfTitleDemo
+      </GfTitle>
     </details>
 
   </div>
 </template>
 
 <script>
-import GroupTitle from "@/components/FormGenerator/components/GroupTitle/index.vue";
+import GfTitle from "@/components/FormGenerator/components/GfTitle/index.vue";
 
 export default {
-  name: "GroupTitleDemo",
+  name: "GfTitleDemo",
   components: {
-    GroupTitle
+    GfTitle
   },
   data() {
     return {
