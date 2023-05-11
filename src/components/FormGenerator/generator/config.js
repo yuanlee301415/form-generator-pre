@@ -154,7 +154,7 @@ export const inputComponents = [
       label: '标题',
       showLabel: false,
       tag: 'GfTitle',
-      tagIcon: '',
+      tagIcon: 'title',
       span: 24,
       layout: 'colFormItem',
       changeTag: true
@@ -175,7 +175,7 @@ export const inputComponents = [
       showLabel: true,
       labelWidth: null,
       tag: 'GfDescription',
-      tagIcon: '',
+      tagIcon: 'description',
       span: 24,
       layout: 'colFormItem',
       changeTag: true,
