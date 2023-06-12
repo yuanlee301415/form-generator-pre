@@ -124,7 +124,7 @@
           <el-form-item v-if="activeData.style&&activeData.style.width!==undefined" label="组件宽度">
             <el-input v-model="activeData.style.width" placeholder="请输入组件宽度" clearable />
           </el-form-item>
-          <el-form-item v-if="!['GfTitle', 'GfDescription'].includes(activeData.__config__.tag) && activeData.__vModel__!==undefined" label="默认值">
+          <el-form-item v-if="!['GfTitle', 'GfDescription', 'GfTable'].includes(activeData.__config__.tag) && activeData.__vModel__!==undefined" label="默认值">
             <el-input
               :value="setDefaultValue(activeData.__config__.defaultValue)"
               placeholder="请输入默认值"
