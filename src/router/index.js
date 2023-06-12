@@ -84,6 +84,14 @@ export const routes = [
         },
         component: () => import('@/views/custom-components/description-demo.vue')
       },
+      {
+        path: 'table',
+        name: 'GfTableDemo',
+        meta: {
+          title: '表格'
+        },
+        component: () => import('@/views/custom-components/table-demo.vue')
+      },
     ]
   }
 ]
