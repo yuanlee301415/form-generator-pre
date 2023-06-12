@@ -267,13 +267,13 @@
           <!--============================== 最大行数 End ==============================-->
 
           <!--============================== 最小值 ==============================-->
-          <el-form-item v-if="isShowMin" label="最小值">
+          <el-form-item v-if="['el-input-number', 'el-slider'].includes(activeData.__config__.tag)" label="最小值">
             <el-input-number v-model="activeData.min" placeholder="最小值" />
           </el-form-item>
           <!--============================== 最小值 End ==============================-->
 
           <!--============================== 最大值 ==============================-->
-          <el-form-item v-if="isShowMax" label="最大值">
+          <el-form-item v-if="['el-input-number', 'el-slider', 'el-rate'].includes(activeData.__config__.tag)" label="最大值">
             <el-input-number v-model="activeData.max" placeholder="最大值" />
           </el-form-item>
           <!--============================== 最大值 End ==============================-->
@@ -285,7 +285,7 @@
           <!--============================== 组件高度 End ==============================-->
 
           <!--============================== 步长 ==============================-->
-          <el-form-item v-if="isShowStep" label="步长">
+          <el-form-item v-if="['el-input-number', 'el-slider'].includes(activeData.__config__.tag)" label="步长">
             <el-input-number v-model="activeData.step" placeholder="步数" />
           </el-form-item>
           <!--============================== 步长 End ==============================-->
@@ -550,7 +550,7 @@
 
             <!-- 静态数据 -->
             <template v-else-if="activeData.__config__.dataType === 'static'">
-              <template v-if="['el-checkbox-group', 'el-radio-group', 'el-select'].indexOf(activeData.__config__.tag) > -1">
+              <template v-if="['el-checkbox-group', 'el-radio-group', 'el-select'].includes(activeData.__config__.tag)">
                 <draggable
                     :list="activeData.__slot__.options"
                     :animation="340"
@@ -1087,18 +1087,6 @@ export default {
         }
       ]
     },
-    activeTag() {
-      return this.activeData.__config__.tag
-    },
-    isShowMin() {
-      return ['el-input-number', 'el-slider'].indexOf(this.activeTag) > -1
-    },
-    isShowMax() {
-      return ['el-input-number', 'el-slider', 'el-rate'].indexOf(this.activeTag) > -1
-    },
-    isShowStep() {
-      return ['el-input-number', 'el-slider'].indexOf(this.activeTag) > -1
-    }
   },
   watch: {
     formConf: {
@@ -1106,6 +1094,9 @@ export default {
         saveFormConf(val)
       },
       deep: true
+    },
+    activeData(val) {
+      console.log('RightPanel>activeData>val:', val)
     }
   },
   created() {
