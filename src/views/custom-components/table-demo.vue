@@ -4,7 +4,7 @@
     <hr>
     <details open>
       <summary>Test</summary>
-      <GfTable />
+      <GfTable :columns="columns"/>
     </details>
 
   </div>
@@ -27,7 +27,7 @@ export default {
         bottomBorder: true,
       },
       columns: [
-        'ID', '姓名', '性别', '地址'
+        'ID', '姓名', '省', '市'
       ]
     }
   }
