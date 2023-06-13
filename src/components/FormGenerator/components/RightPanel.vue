@@ -478,8 +478,39 @@
           </el-form-item>
           <!--============================== 时间格式 End ==============================-->
 
-          <!--============================== 选项（数据类型） ==============================-->
-          <template v-if="['el-checkbox-group', 'el-radio-group', 'el-select', 'el-cascader', 'el-table', 'el-select'].includes(activeData.__config__.tag)">
+          <template v-if="['el-table'].includes(activeData.__config__.tag)">
+            <el-divider>选项</el-divider>
+            <draggable
+                :list="activeData.__slot__.columns"
+                :animation="340"
+                group="selectItem"
+                handle=".option-drag"
+            >
+              <div v-for="(item, index) in activeData.__slot__.columns" :key="index" class="select-item">
+                <div class="select-line-icon option-drag">
+                  <i class="el-icon-s-operation" />
+                </div>
+                <el-input v-model="item.label" placeholder="列名" size="small" />
+                <div class="close-btn select-line-icon" @click="activeData.__slot__.columns.splice(index, 1)">
+                  <i class="el-icon-remove-outline" />
+                </div>
+              </div>
+            </draggable>
+            <div style="margin-left: 20px;">
+              <el-button
+                  style="padding-bottom: 0"
+                  icon="el-icon-circle-plus-outline"
+                  type="text"
+                  @click="addColumnItem"
+              >
+                添加列
+              </el-button>
+            </div>
+
+          </template>
+
+          <!--============================== 选项（复选/单选/下拉/级联） ==============================-->
+          <template v-if="['el-checkbox-group', 'el-radio-group', 'el-select', 'el-cascader'].includes(activeData.__config__.tag)">
             <el-divider>选项</el-divider>
             <el-form-item v-if="activeData.__config__.dataType" label="数据类型">
               <el-radio-group v-model="activeData.__config__.dataType" size="small">
@@ -608,7 +639,7 @@
 
             <el-divider />
           </template>
-          <!--============================== 选项（数据类型）End ==============================-->
+          <!--============================== 选项（复选/单选/下拉/级联）End ==============================-->
 
           <!--============================== 选项样式 ==============================-->
           <el-form-item v-if="activeData.__config__.optionType !== undefined" label="选项样式">
@@ -1123,6 +1154,11 @@ export default {
       this.activeData.__config__.regList.push({
         pattern: '',
         message: ''
+      })
+    },
+    addColumnItem() {
+      this.activeData.__slot__.columns.push({
+        label: ''
       })
     },
     addSelectItem() {
