@@ -193,12 +193,17 @@ export const inputComponents = [
       label: '表格',
       showLabel: true,
       labelWidth: null,
-      tag: 'el-table',
+      tag: 'GfTable',
       tagIcon: 'table',
       span: 24,
       layout: 'colFormItem',
       changeTag: true,
     },
+    columns: [
+      { label: '列-11' },
+      { label: '列-22' },
+      { label: '列-33' }
+    ],
     __slot__: {
       columns: [
         { label: '列-1' },

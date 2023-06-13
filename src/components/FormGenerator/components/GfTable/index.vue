@@ -5,7 +5,7 @@
         border
         stripe
     >
-      <el-table-column v-for="(label,idx) of columns" :label="label" :key="label+idx" :prop="[idx, label].join('_')">
+      <el-table-column v-for="(item,idx) of columns" :label="item.label" :key="idx">
 
       </el-table-column>
     </el-table>

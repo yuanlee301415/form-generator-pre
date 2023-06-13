@@ -478,20 +478,20 @@
           </el-form-item>
           <!--============================== 时间格式 End ==============================-->
 
-          <template v-if="['el-table'].includes(activeData.__config__.tag)">
+          <template v-if="['GfTable'].includes(activeData.__config__.tag)">
             <el-divider>选项</el-divider>
             <draggable
-                :list="activeData.__slot__.columns"
+                :list="activeData.columns"
                 :animation="340"
                 group="selectItem"
                 handle=".option-drag"
             >
-              <div v-for="(item, index) in activeData.__slot__.columns" :key="index" class="select-item">
+              <div v-for="(item, index) in activeData.columns" :key="index" class="select-item">
                 <div class="select-line-icon option-drag">
                   <i class="el-icon-s-operation" />
                 </div>
                 <el-input v-model="item.label" placeholder="列名" size="small" />
-                <div class="close-btn select-line-icon" @click="activeData.__slot__.columns.splice(index, 1)">
+                <div class="close-btn select-line-icon" @click="activeData.columns.splice(index, 1)">
                   <i class="el-icon-remove-outline" />
                 </div>
               </div>
@@ -1157,7 +1157,7 @@ export default {
       })
     },
     addColumnItem() {
-      this.activeData.__slot__.columns.push({
+      this.activeData.columns.push({
         label: ''
       })
     },
