@@ -6,10 +6,17 @@
         :data="value"
         border
         stripe
+        @cell-click="handleCellClick"
     >
       <el-table-column v-for="(item,idx) of columns" :label="item.label" :key="idx">
         <template slot-scope="scope">
-          {{ scope.row[idx] }}
+          <el-input
+              v-if="row === scope.row && columnLabel === item.label"
+              v-model="scope.row[idx]"
+              autofocus
+              @blur="handleEnter"
+          />
+          <span v-else>{{ scope.row[idx] }}</span>
         </template>
       </el-table-column>
     </el-table>
@@ -29,6 +36,12 @@ export default {
       default: null
     }
   },
+  data() {
+    return {
+      row: null,
+      columnLabel: void 0
+    }
+  },
   created() {
     console.log('GfTable>this:', this)
   },
@@ -39,6 +52,18 @@ export default {
     },
     removeRow() {
 
+    },
+    handleCellClick(row, column, cell, event) {
+      console.log('handleCellClick>args:', arguments)
+      this.row = row
+      this.columnLabel = column.label
+    },
+    handleEnter(e) {
+      // const { value } = e.target
+      console.log('handleBlur>args:', arguments)
+      this.$emit('input', this.value)
+      this.row = null
+      this.columnLabel = void 0
     }
   }
 }
