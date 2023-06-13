@@ -4,7 +4,7 @@
     <hr>
     <details open>
       <summary>Test</summary>
-      <GfTable :columns="columns"/>
+      <GfTable :columns="columns" v-model="value"/>
     </details>
 
   </div>
@@ -27,7 +27,15 @@ export default {
         bottomBorder: true,
       },
       columns: [
-        'ID', '姓名', '省', '市'
+        { label: 'ID' },
+        { label: '姓名'},
+        { label: '省' },
+        { label: '市' }
+      ],
+      value: [
+          [0, 'ZS', 'SH', 'SH'],
+          [1, 'LS', 'SH', 'SH'],
+          [2, 'WW', 'SH', 'SH'],
       ]
     }
   }

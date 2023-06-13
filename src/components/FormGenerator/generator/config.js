@@ -198,19 +198,13 @@ export const inputComponents = [
       span: 24,
       layout: 'colFormItem',
       changeTag: true,
+      defaultValue: [[1,2,3]]
     },
     columns: [
       { label: '列-11' },
       { label: '列-22' },
       { label: '列-33' }
     ],
-    __slot__: {
-      columns: [
-        { label: '列-1' },
-        { label: '列-2' },
-        { label: '列-3' }
-      ]
-    }
   }
 ]
 
