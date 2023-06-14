@@ -9,6 +9,7 @@
         <el-option value="cascader">级联</el-option>
         <el-option value="all">All</el-option>
         <el-option value="custom">自定义组件</el-option>
+        <el-option value="table">Table</el-option>
       </el-select>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">

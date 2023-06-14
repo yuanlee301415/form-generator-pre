@@ -8,6 +8,7 @@
         <el-option value="cascader">级联</el-option>
         <el-option value="all">All</el-option>
         <el-option value="custom">自定义组件</el-option>
+        <el-option value="table">Table</el-option>
       </el-select>
       <hr style="margin: 1rem 0;">
       <Parser v-if="formData" :form-conf="formData"/>

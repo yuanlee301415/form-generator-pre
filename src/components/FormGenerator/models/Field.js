@@ -217,6 +217,12 @@ export default class Field {
     color
 
     /**
+     * 表格列名配置
+     * @type string[]
+     */
+    columns
+
+    /**
      * 前图标
      * @type string
      */
@@ -311,7 +317,7 @@ export default class Field {
             __config__, __slot__, __vModel__, placeholder, style, readonly, disabled, props,
             gutter, type, justify, align, min, max, separator, autosize, height, step, precision, maxlength,
             options, range, size, multiple, clearable, filterable, format, accept, action, name, branding,
-            textAlign, fontSize, lineHeight, bottomBorder, color,
+            textAlign, fontSize, lineHeight, bottomBorder, color, columns,
             ['prefix-icon']: prefixIcon,
             ['suffix-icon']: suffixIcon,
             ['show-word-limit']: showWordLimit,
@@ -365,6 +371,7 @@ export default class Field {
         this.lineHeight = lineHeight
         this.bottomBorder = bottomBorder
         this.color = color
+        this.columns = columns
 
         this['prefix-icon'] = prefixIcon
         this['suffix-icon'] = suffixIcon

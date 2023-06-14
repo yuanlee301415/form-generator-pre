@@ -185,6 +185,26 @@ export const inputComponents = [
     },
     fontSize: 1,
     color: null,
+  },
+
+  {
+    __config__: {
+      cnName: '表格',
+      label: '表格',
+      showLabel: true,
+      labelWidth: null,
+      tag: 'GfTable',
+      tagIcon: 'table',
+      span: 24,
+      layout: 'colFormItem',
+      changeTag: true,
+      defaultValue: []
+    },
+    columns: [
+      { label: '列-1' },
+      { label: '列-2' },
+      { label: '列-3' }
+    ],
   }
 ]
 

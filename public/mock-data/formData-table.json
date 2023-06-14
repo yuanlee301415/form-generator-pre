@@ -1,0 +1,65 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "cnName": "标题",
+        "label": "标题",
+        "showLabel": false,
+        "tag": "GfTitle",
+        "tagIcon": "title",
+        "span": 24,
+        "layout": "colFormItem",
+        "changeTag": true,
+        "formId": 166,
+        "renderKey": "1661686730782204"
+      },
+      "__slot__": {
+        "default": "表格"
+      },
+      "textAlign": "center",
+      "fontSize": 1.5,
+      "lineHeight": 1.5,
+      "bottomBorder": true,
+      "__vModel__": "field166"
+    },
+    {
+      "__config__": {
+        "cnName": "表格",
+        "label": "用户列表",
+        "showLabel": true,
+        "labelWidth": null,
+        "tag": "GfTable",
+        "tagIcon": "table",
+        "span": 24,
+        "layout": "colFormItem",
+        "changeTag": true,
+        "defaultValue": [],
+        "formId": 165,
+        "renderKey": "1651686730605689"
+      },
+      "columns": [
+        {
+          "label": "ID"
+        },
+        {
+          "label": "姓名"
+        },
+        {
+          "label": "年龄"
+        },
+        {
+          "label": "性别"
+        }
+      ],
+      "__vModel__": "field165"
+    }
+  ],
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "medium",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24
+}
