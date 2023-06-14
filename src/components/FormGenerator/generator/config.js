@@ -198,7 +198,7 @@ export const inputComponents = [
       span: 24,
       layout: 'colFormItem',
       changeTag: true,
-      defaultValue: [[1,2,3]]
+      defaultValue: [[1,2,3], [4,5,6]]
     },
     columns: [
       { label: '列-11' },

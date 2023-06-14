@@ -3,20 +3,20 @@
     <el-button @click="addRow">新增行</el-button>
     <el-button @click="removeRow">删除行</el-button>
     <el-table
-        :data="value"
+        :data="tableData"
         border
         stripe
         @cell-click="handleCellClick"
     >
-      <el-table-column v-for="(item,idx) of columns" :label="item.label" :key="idx">
+      <el-table-column v-for="(item,idx) of columns" :label="item.label" :prop="[idx, item.label].join('_')" :key="idx">
         <template slot-scope="scope">
           <el-input
-              v-if="row === scope.row && columnLabel === item.label"
-              v-model="scope.row[idx]"
+              v-if="row === scope.row && column.property === [idx, item.label].join('_')"
+              v-model="scope.row[[idx, item.label].join('_')]"
               autofocus
               @blur="handleEnter"
           />
-          <span v-else>{{ scope.row[idx] }}</span>
+          <span v-else>{{ scope.row[[idx, item.label].join('_')] }}</span>
         </template>
       </el-table-column>
     </el-table>
@@ -36,10 +36,23 @@ export default {
       default: null
     }
   },
+  computed: {
+    tableData() {
+      const ret = this.value && this.value.map((row) => {
+        const item = {}
+        this.columns && this.columns.forEach((col, index) => {
+          item[[index, col.label].join('_')] = row[index]
+        })
+        return item
+      })
+      console.log('computed>tableData>ret:', ret)
+      return ret
+    }
+  },
   data() {
     return {
       row: null,
-      columnLabel: void 0
+      column: void 0
     }
   },
   created() {
@@ -47,8 +60,11 @@ export default {
   },
   methods: {
     addRow() {
-      const value = this.value.concat([[]])
-      this.$emit('input', value)
+      const newRow = {}
+      this.columns && this.columns.forEach((_, idx) => {
+        newRow[[idx, _.label].join('_')] = undefined
+      })
+      this.$set(this.tableData, this.tableData.length, newRow)
     },
     removeRow() {
 
@@ -56,14 +72,24 @@ export default {
     handleCellClick(row, column, cell, event) {
       console.log('handleCellClick>args:', arguments)
       this.row = row
-      this.columnLabel = column.label
+      this.column = column
     },
-    handleEnter(e) {
+    handleEnter() {
       // const { value } = e.target
       console.log('handleBlur>args:', arguments)
-      this.$emit('input', this.value)
+      console.log('handleBlur>value:', this.value)
+      console.log('handleBlur>tableData:', this.tableData)
+      const value = this.tableData.map((row) => {
+        const rowValues = []
+        this.columns.forEach((col, idx) => {
+          rowValues.push(row[[idx, col.label].join('_')])
+        })
+        console.log('handleBlur>rowValues:', rowValues)
+        return rowValues
+      })
+      this.$emit('input', value)
       this.row = null
-      this.columnLabel = void 0
+      this.column = null
     }
   }
 }
