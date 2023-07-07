@@ -5,10 +5,11 @@
         <template #prefix><b>表单数据：</b></template>
         <el-option value="1">1</el-option>
         <el-option value="2">2</el-option>
-        <el-option value="defaultValue">defaultValue</el-option>
-        <el-option value="dynamic">dynamic</el-option>
-        <el-option value="cascader">cascader</el-option>
-        <el-option value="all">all</el-option>
+        <el-option value="defaultValue">默认值</el-option>
+        <el-option value="cascader">级联</el-option>
+        <el-option value="all">All</el-option>
+        <el-option value="custom">自定义组件</el-option>
+        <el-option value="table">Table</el-option>
       </el-select>
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
@@ -136,46 +137,31 @@
 import draggable from 'vuedraggable'
 import { debounce } from 'throttle-debounce'
 import { saveAs } from 'file-saver'
-import ClipboardJS from 'clipboard'
 import Field from "@/components/FormGenerator/models/Field";
 import CustomFormData from "@/components/FormGenerator/models/CustomFormData";
 import Parser from '@/components/FormGenerator/parser/Parser.vue'
-import render from '@/components/FormGenerator/render/render'
 import FormDrawer from '@/components/FormGenerator/components/FormDrawer.vue'
 import JsonDrawer from '@/components/FormGenerator/components/JsonDrawer.vue'
 import RightPanel from '@/components/FormGenerator/components/RightPanel.vue'
-import {
-  inputComponents, selectComponents, layoutComponents, formConf
-} from '@/components/FormGenerator/generator/config'
-import {
-  exportDefault, beautifierConf, isNumberStr, titleCase, deepClone, isObjectObject
-} from '@/components/FormGenerator/utils'
-import {
-  makeUpHtml, vueTemplate, vueScript, cssStyle
-} from '@/components/FormGenerator/generator/html'
+import { inputComponents, selectComponents, layoutComponents } from '@/components/FormGenerator/generator/config'
+import { beautifierConf, titleCase, deepClone, isObjectObject } from '@/components/FormGenerator/utils'
+import { makeUpHtml, vueTemplate, vueScript, cssStyle } from '@/components/FormGenerator/generator/html'
 import { makeUpJs } from '@/components/FormGenerator/generator/js'
 import { makeUpCss } from '@/components/FormGenerator/generator/css'
-import drawingDefalut from '@/components/FormGenerator/generator/drawingDefalut'
 import CodeTypeDialog from '@/components/FormGenerator/components/CodeTypeDialog.vue'
 import DraggableItem from '@/components/FormGenerator/components/DraggableItem.vue'
-import {
-  getDrawingList, saveDrawingList, getIdGlobal, saveIdGlobal, getFormConf
-} from '@/components/FormGenerator/utils/db'
+import { saveDrawingList, getIdGlobal, saveIdGlobal } from '@/components/FormGenerator/utils/db'
 import loadBeautifier from '@/components/FormGenerator/utils/loadBeautifier'
 
 let beautifier
-// const emptyActiveData = { style: {}, autosize: {} }
 let oldActiveId
 let tempActiveData
-// const drawingListInDB = getDrawingList()
-// const formConfInDB = getFormConf()
 const idGlobal = getIdGlobal()
 
 export default {
   components: {
     Parser,
     draggable,
-    render,
     FormDrawer,
     JsonDrawer,
     RightPanel,
@@ -186,7 +172,6 @@ export default {
     return {
       drawer: false,
       dataSource: window.localStorage.getItem('editFormDataSource') || '',
-
       idGlobal,
       formConf: new CustomFormData(),
       inputComponents,
@@ -390,7 +375,7 @@ export default {
       console.log('generateConf:', this.generateConf)
       func && func(data)
     },
-    execRun(data) {
+    execRun() {
       this.AssembleFormData()
       this.drawerVisible = true
     },
@@ -399,7 +384,7 @@ export default {
       const blob = new Blob([codeStr], { type: 'text/plain;charset=utf-8' })
       saveAs(blob, data.fileName)
     },
-    execCopy(data) {
+    execCopy() {
       document.getElementById('copyNode').click()
     },
     empty() {

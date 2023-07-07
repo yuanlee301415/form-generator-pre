@@ -7,11 +7,18 @@ import App from './App.vue'
 import router from '@/router'
 import '@/assets/style.css'
 import '@/components/FormGenerator/styles/index.scss'
-import '@/components/FormGenerator/icons'
+import '@/icons'
 import Tinymce from '@/components/FormGenerator/tinymce/index.vue'
+import GfTitle from '@/components/FormGenerator/components/GfTitle/index.vue'
+import GfDescription from "@/components/FormGenerator/components/GfDescription/index.vue";
+import GfTable from "@/components/FormGenerator/components/GfTable/index.vue";
 
 Vue.component('tinymce', Tinymce)
+Vue.component('GfTitle', GfTitle)
+Vue.component('GfDescription', GfDescription)
+Vue.component('GfTable', GfTable)
 Vue.use(ElementUI)
+
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 

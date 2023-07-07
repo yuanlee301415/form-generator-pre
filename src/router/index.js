@@ -23,8 +23,12 @@ export const routes = [
 
   { // Form
     path: '/form',
+    name: 'CustomForm',
+    meta: {
+      title: '表单'
+    },
     component: Layout,
-    redirect: '/form/',
+    redirect: '/form/add',
     children: [
       {
         path: 'add',
@@ -52,6 +56,42 @@ export const routes = [
         },
         component: () => import('@/views/form/view')
       }
+    ]
+  },
+
+  { // 自定义组件
+    path: '/custom-components',
+    name: 'custom-components',
+    meta: {
+      title: '自定义组件'
+    },
+    component: Layout,
+    redirect: '/custom-components/title',
+    children: [
+      {
+        path: 'title',
+        name: 'GfTitleDemo',
+        meta: {
+          title: '标题'
+        },
+        component: () => import('@/views/custom-components/title-demo')
+      },
+      {
+        path: 'description',
+        name: 'GfDescriptionDemo',
+        meta: {
+          title: '描述'
+        },
+        component: () => import('@/views/custom-components/description-demo.vue')
+      },
+      {
+        path: 'table',
+        name: 'GfTableDemo',
+        meta: {
+          title: '表格'
+        },
+        component: () => import('@/views/custom-components/table-demo.vue')
+      },
     ]
   }
 ]

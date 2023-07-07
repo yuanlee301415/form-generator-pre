@@ -34,7 +34,7 @@
 
 <style scoped>
 .side {
-  position: absolute;
+  position: fixed;
   width: 300px;
   height: 100vh;
 }

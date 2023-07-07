@@ -6,6 +6,12 @@ import FieldValidate from "./FieldValidate";
  */
 export default class FieldConfig {
     /**
+     * 组件中文名称
+     * @type string
+     */
+    cnName
+
+    /**
      * 标签
      * @type string
      */
@@ -138,10 +144,11 @@ export default class FieldConfig {
 
     constructor(_) {
         const {
-            label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
+            cnName, label, labelWidth, showLabel, changeTag, tag, tagIcon, required, layout, span, regList, defaultValue,
             formId, renderKey, children, dataType, url, method, dataPath, optionType, document, dataConsumer, dict, border,
             ...rest
         } = {..._}
+        this.cnName = cnName
         this.label = label
         this.labelWidth = labelWidth
         this.showLabel = showLabel

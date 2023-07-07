@@ -1,0 +1,74 @@
+{
+  "fields": [
+    {
+      "__config__": {
+        "cnName": "标题",
+        "label": "标题",
+        "showLabel": false,
+        "tag": "GfTitle",
+        "tagIcon": "",
+        "span": 24,
+        "layout": "colFormItem",
+        "formId": 109,
+        "renderKey": "1091683789748741"
+      },
+      "__slot__": {
+        "default": "自定义组件"
+      },
+      "textAlign": "center",
+      "fontSize": 1.5,
+      "lineHeight": 1.5,
+      "bottomBorder": true,
+      "__vModel__": "field109"
+    },
+    {
+      "__config__": {
+        "cnName": "标题",
+        "label": "标题",
+        "showLabel": false,
+        "tag": "GfTitle",
+        "tagIcon": "",
+        "span": 24,
+        "layout": "colFormItem",
+        "formId": 111,
+        "renderKey": "1111683789767419"
+      },
+      "__slot__": {
+        "default": "四川医保"
+      },
+      "textAlign": "center",
+      "fontSize": 1.5,
+      "lineHeight": 1.5,
+      "bottomBorder": true,
+      "__vModel__": "field111"
+    },
+    {
+      "__config__": {
+        "cnName": "描述说明",
+        "label": "重要说明",
+        "showLabel": true,
+        "labelWidth": null,
+        "tag": "GfDescription",
+        "tagIcon": "",
+        "span": 24,
+        "layout": "colFormItem",
+        "formId": 110,
+        "renderKey": "1101683789750916"
+      },
+      "__slot__": {
+        "default": "请提供审批材料！！请提供审批材料！！请提供审批材料！！"
+      },
+      "fontSize": 1,
+      "color": "#E12525",
+      "__vModel__": "field110"
+    }
+  ],
+  "formRef": "elForm",
+  "formModel": "formData",
+  "size": "medium",
+  "labelWidth": 100,
+  "formRules": "rules",
+  "gutter": 15,
+  "disabled": false,
+  "span": 24
+}

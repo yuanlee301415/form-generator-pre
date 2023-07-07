@@ -34,3 +34,16 @@ export const DATA_TYPE = {
     DYNAMIC: 'dynamic',
     STATIC: 'static'
 }
+
+/**
+ * 文字对齐方式
+ * @enum
+ * @property {'left'} TEXT_ALIGN.LEFT left
+ * @property {'center'} TEXT_ALIGN.CENTER center
+ * @property {'right'} TEXT_ALIGN.RIGHT right
+ */
+export const TEXT_ALIGN = {
+    LEFT: 'left',
+    CENTER: 'center',
+    RIGHT: 'right'
+}
